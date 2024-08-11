@@ -32,25 +32,18 @@ class FormDataService {
     const blobServiceClient = BlobServiceClient.fromConnectionString("BlobEndpoint=https://doctornetwork.blob.core.windows.net/;QueueEndpoint=https://doctornetwork.queue.core.windows.net/;FileEndpoint=https://doctornetwork.file.core.windows.net/;TableEndpoint=https://doctornetwork.table.core.windows.net/;SharedAccessSignature=sv=2022-11-02&ss=bf&srt=sco&sp=rwdlaciytfx&se=2028-08-11T07:24:39Z&st=2024-08-10T23:24:39Z&spr=https&sig=f5qtdD5hypctaXv5CV13rNnmN4GU1pnEiIhpqwNbUhA%3D");
     // Get a reference to the container and blob
     let i = 1;
-    for await (const container of blobServiceClient.listContainers()) {
-      console.log(`Container ${i++}: ${container.name}`);
-    }
+    // for await (const container of blobServiceClient.listContainers()) {
+    //   console.log(`Container ${i++}: ${container.name}`);
+    // }
   
     // Create a container
     const containerName = `doctornetwork-questions`;
-    // const containerClient = blobServiceClient.getContainerClient(containerName);
-  
-    // const createContainerResponse = await containerClient.create();
-    // console.log(`Create container ${containerName} successfully`, createContainerResponse.requestId);
-  
-    // // Delete container
-    // await containerClient.delete();
 
     const containerClient = blobServiceClient.getContainerClient(containerName);
     const blobClient = containerClient.getBlockBlobClient(fileName);
 
-// Use the BlobClient to download the file contents
-    const downloadBlockBlobResponse = await blobClient.download(0);
+    // Use the BlobClient to download the file contents
+    const downloadBlockBlobResponse = await blobClient.download();
     const downloadedContent = await blobToString(await downloadBlockBlobResponse.blobBody);
     return JSON.parse(downloadedContent);
   }
@@ -60,6 +53,18 @@ class FormDataService {
   }
 
   create(data) {
+    // Create a BlobServiceClient object
+    const blobServiceClient = BlobServiceClient.fromConnectionString("BlobEndpoint=https://doctornetwork.blob.core.windows.net/;QueueEndpoint=https://doctornetwork.queue.core.windows.net/;FileEndpoint=https://doctornetwork.file.core.windows.net/;TableEndpoint=https://doctornetwork.table.core.windows.net/;SharedAccessSignature=sv=2022-11-02&ss=bf&srt=sco&sp=rwdlaciytfx&se=2028-08-11T07:24:39Z&st=2024-08-10T23:24:39Z&spr=https&sig=f5qtdD5hypctaXv5CV13rNnmN4GU1pnEiIhpqwNbUhA%3D");
+    // Create a container
+    const containerName = `doctornetwork-questions`;
+    const containerClient = blobServiceClient.getContainerClient(containerName);
+    const blobClient = containerClient.getBlockBlobClient(fileName);
+
+    let content = this.getAll();
+    content.push(data);
+
+    console.log(content);
+
     return http.post("/form/", data);
   }
 
