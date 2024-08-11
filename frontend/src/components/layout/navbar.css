@@ -1,0 +1,32 @@
+.sub-header {
+    background-color: #e6f3fa;
+    color: #3299db;
+    padding: 08px 0;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sub-header-title {
+    margin-left: 20px;
+    text-align: left;
+    
+  }
+  .sub-header-tabs {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+  }
+  .sub-header-tab {
+    padding: 10px 15px;
+    color: #3299db;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .sub-header-tab:hover, .sub-header-tab.active {
+    background-color: rgba(50, 153, 219, 0.2);
+  }
