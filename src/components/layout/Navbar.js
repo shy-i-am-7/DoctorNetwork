@@ -9,16 +9,16 @@ const navbar= () =>{
     <div>
       <ul className="sub-header-tabs">
         <li className="sub-header-tab active">
-          <Link to="/" style={{textDecoration:"none"}}>Doctor of the Month</Link>
+          <Link to="/" style={{textDecoration:"none", color: "#3299db"}}>Doctor of the Month</Link>
         </li>
         <li className="sub-header-tab">
-          <Link to="/cats" style={{textDecoration:"none"}}>Previous Doctors</Link>
+          <Link to="/PreviousDoc" style={{textDecoration:"none", color: "#3299db"}}>Previous Doctors</Link>
         </li>
         <li className="sub-header-tab"> 
-          <Link to="/sheeps" style={{textDecoration:"none"}}>Join Newsletter</Link>
+          <Link to="/Newsletter" style={{textDecoration:"none", color: "#3299db"}}>Join Newsletter</Link>
         </li>
         <li className="sub-header-tab">
-          <Link to="/goats" style={{textDecoration:"none"}}>About/Contact</Link>
+          <Link to="/Contact" style={{textDecoration:"none", color: "#3299db"}}>About/Contact</Link>
         </li>
       </ul>
     </div>

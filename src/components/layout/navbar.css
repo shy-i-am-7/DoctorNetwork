@@ -19,10 +19,11 @@
     text-decoration: none;
     list-style: none;
     display: flex;
+    color: #3299db !important;
   }
   .sub-header-tab {
     padding: 10px 15px;
-    color: #3299db;
+    color: #3299db !important;
     text-decoration: none;
     transition: background-color 0.3s;
   }

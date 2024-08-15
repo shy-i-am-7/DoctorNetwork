@@ -5,7 +5,7 @@ import Header from './components/layout/Header';
 import DoctorOfMonth from "./pages/DoctorOfMonth"
 import PreviousDoc from "./pages/PreviousDoc"
 import Newsletter from "./pages/Newsletter"
-import Contact from "./pages/Contact"
+import contact from "./pages/Contact"
 function App() {
   return (
     <Router>
@@ -13,9 +13,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' exact Component={DoctorOfMonth} />
-        <Route path='/cats' Component={PreviousDoc} />
-        <Route path='/sheeps' Component={Newsletter} />
-        <Route path='/goats' Component={Contact} />
+        <Route path='/PreviousDoc' Component={PreviousDoc} />
+        <Route path='/Newsletter' Component={Newsletter} />
+        <Route path='/contact' Component={contact} />
       </Routes>
     </Router>
   );
