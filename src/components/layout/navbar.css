@@ -10,11 +10,12 @@
     justify-content: space-between;
     align-items: center;
   }
-  .sub-header-title {
+  .navbar-brand{
     margin-left: 20px;
     text-align: left;
-    
+    color: #3299db !important;
   }
+
   .sub-header-tabs {
     text-decoration: none;
     list-style: none;
@@ -25,9 +26,11 @@
     padding: 10px 15px;
     color: #3299db !important;
     text-decoration: none;
+    
     transition: background-color 0.3s;
   }
 
   .sub-header-tab:hover, .sub-header-tab.active {
     background-color: rgba(50, 153, 219, 0.2);
   }
+
