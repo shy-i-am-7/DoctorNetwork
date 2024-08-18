@@ -57,7 +57,7 @@ export default class QuestionList extends Component{
         this.setState({
           questionList: response
         });
-        this.getFilteredQuestions();
+        //this.getFilteredQuestions();
         console.log(response);
       })
       .catch(e => {
