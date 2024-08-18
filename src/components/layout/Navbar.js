@@ -27,8 +27,9 @@ const Navbarcomp= () =>{
   return (
   <Navbar expand="lg" expanded={expanded} className='sub-header'>
     {/* <Container> */}
-      <Navbar.Brand style={{ fontSize: '22px' }}>{getBrandName()}</Navbar.Brand>
-      <Navbar.Toggle 
+    <div className='container-fluid'>
+      <Navbar.Brand className=''>{getBrandName()}</Navbar.Brand>
+      <Navbar.Toggle className='ms-auto'
           aria-controls="basic-navbar-nav" 
           onClick={() => setExpanded(expanded ? false : "expanded")} 
         />
@@ -69,6 +70,7 @@ const Navbarcomp= () =>{
         </NavLink>
       </Nav>
       </Navbar.Collapse>
+      </div>
     {/* </Container> */}
   </Navbar>
   );

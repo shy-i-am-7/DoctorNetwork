@@ -1,5 +1,6 @@
 import React from 'react';
 import './header.css';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function Header() {
   return (
@@ -13,5 +14,6 @@ function Header() {
     </div>
   );
 }
+
 
 export default Header;
