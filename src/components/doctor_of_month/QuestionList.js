@@ -57,7 +57,7 @@ export default class QuestionList extends Component{
         this.setState({
           questionList: response
         });
-        this.getFilteredQuestions();
+        //this.getFilteredQuestions();
         console.log(response);
       })
       .catch(e => {
@@ -116,10 +116,15 @@ export default class QuestionList extends Component{
         <div className="box answers-list" style={{ flex: 3 }}>
           <div className="title">Answers</div>
           <div className="content changeable-font" id="answers-content">
-            {currentQuestion ? (
+            {currentQuestion ? currentQuestion.answer != "Answer then Mark as complete" ? (
                 <div className="answer">
                   <div className="answer-question">{currentQuestion.question}</div>
                   <div className="answer-text">{currentQuestion.answer}</div>
+                </div>
+              ) : (
+                <div className="no-answer">
+                  <div className="answer-question">{currentQuestion.question}</div>
+                  <div className="answer-text"> This question currently does not have an answer. </div>
                 </div>
               ) : (
               <div className="placeholder-text">Click on a question on the left to see the response.</div>

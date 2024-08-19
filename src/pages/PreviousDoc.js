@@ -63,39 +63,41 @@ export default class PreviousDoc extends Component {
 
     return (
       <div className="container">
-        {doctors && doctors.length > 0 ? (
-          doctors.map((doctor, index) => (
-            <div className="doctor-answer-container" key={index}>
-              <div className="doctor-card-wrapper">
-                <DoctorCard
-                  doctor={doctor}
-                  onQuestionSelect={(questionIndex) =>
-                    this.setActiveQuestion(index, questionIndex)
-                  }
-                />
+        <div className="prev_doc_container">
+          {doctors && doctors.length > 0 ? (
+            doctors.map((doctor, index) => (
+              <div className="doctor-answer-container" key={index}>
+                <div className="doctor-card-wrapper">
+                  <DoctorCard
+                    doctor={doctor}
+                    onQuestionSelect={(questionIndex) =>
+                      this.setActiveQuestion(index, questionIndex)
+                    }
+                  />
+                </div>
+                <div className="answer-wrapper">
+                  {activeAnswers[index] !== undefined &&
+                    activeAnswers[index] !== null && (
+                      <div className="answer">
+                        <button
+                          className="close-button"
+                          onClick={() => this.closeAnswer(index)}
+                        >
+                          ×
+                        </button>
+                        <h4>
+                          <strong>{doctor.questions[activeAnswers[index]]}</strong>
+                        </h4>
+                        <p>{doctor.answers[activeAnswers[index]]}</p>
+                      </div>
+                    )}
+                </div>
               </div>
-              <div className="answer-wrapper">
-                {activeAnswers[index] !== undefined &&
-                  activeAnswers[index] !== null && (
-                    <div className="answer">
-                      <button
-                        className="close-button"
-                        onClick={() => this.closeAnswer(index)}
-                      >
-                        ×
-                      </button>
-                      <h4>
-                        <strong>{doctor.questions[activeAnswers[index]]}</strong>
-                      </h4>
-                      <p>{doctor.answers[activeAnswers[index]]}</p>
-                    </div>
-                  )}
-              </div>
-            </div>
-          ))
-        ) : (
-          <div>No doctors found</div>
-        )}
+            ))
+          ) : (
+            <div>No doctors found</div>
+          )}
+        </div>
       </div>
     );
   }
