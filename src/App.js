@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Header />
-      <br></br>
-      <br></br>
+      {/* <br></br>
+      <br></br> */}
       <Navbar />
       <Routes>
         <Route path='/' exact Component={DoctorOfMonth} />
