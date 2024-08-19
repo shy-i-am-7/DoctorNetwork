@@ -64,7 +64,7 @@ export default function Newsletter() {
                 ) : (
                     <div className="confirmation-message">
                         <p>
-                            Thank you, <strong>{confirmation.name}</strong>,for subscribing to our
+                            Thank you, <strong>{confirmation.name}</strong>, for subscribing to our
                             newsletter! We will be sending emails to <strong>{confirmation.email}</strong>. Keep an eye out for them!
                         </p>
                     </div>
