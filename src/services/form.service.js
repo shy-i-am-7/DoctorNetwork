@@ -5,7 +5,7 @@ class FormDataService {
     let content = await http.get("https://doctornetwork-ba59f-default-rtdb.firebaseio.com/test.json");
     content = Object.values(content.data)
     console.log(content);
-    return content
+    return content;
   }
 
   get(id) {
