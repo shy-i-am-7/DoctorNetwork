@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import FormDataService from "../../services/form.service";
 
 export default class AskQuestion extends Component {
+  
 //function AskQuestion() {
   //const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -21,6 +22,7 @@ export default class AskQuestion extends Component {
     this.onChangeQuestion = this.onChangeQuestion.bind(this);
     this.saveForm = this.saveForm.bind(this);
     this.newForm = this.newForm.bind(this);
+    //this.formPreventDefault = this.formPreventDefault.bind(this);
 
     this.state = {
       id: null,
@@ -52,7 +54,13 @@ export default class AskQuestion extends Component {
     });
   }
 
-  saveForm() {
+  // formPreventDefault(e) {
+  //   //alert('here');  
+  //   e.preventDefault();
+  // }
+
+  saveForm(event) {
+    event.preventDefault();
     var data = {
       name: this.state.name,
       email: this.state.email,
@@ -94,6 +102,7 @@ export default class AskQuestion extends Component {
 
 
   render(){
+    //const [confirmation, setConfirmation] = useState(null);
     return (
       <div className="box ask-question">
         <div className="title">Ask a Question!</div>
