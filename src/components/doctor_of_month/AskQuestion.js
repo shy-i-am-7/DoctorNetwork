@@ -22,6 +22,7 @@ export default class AskQuestion extends Component {
     this.onChangeQuestion = this.onChangeQuestion.bind(this);
     this.saveForm = this.saveForm.bind(this);
     this.newForm = this.newForm.bind(this);
+    //this.formPreventDefault = this.formPreventDefault.bind(this);
 
     this.state = {
       id: null,
@@ -53,7 +54,13 @@ export default class AskQuestion extends Component {
     });
   }
 
-  saveForm() {
+  // formPreventDefault(e) {
+  //   //alert('here');  
+  //   e.preventDefault();
+  // }
+
+  saveForm(event) {
+    event.preventDefault();
     var data = {
       name: this.state.name,
       email: this.state.email,
