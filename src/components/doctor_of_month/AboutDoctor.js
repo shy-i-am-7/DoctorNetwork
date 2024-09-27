@@ -49,7 +49,7 @@ export default class AboutDoctor extends Component {
 
     return (
       <div className="box about-author">
-        <div className="title">About the Doctor</div>
+        <div className="title">About the Doctor of the Month</div>
         {lastDoctor ? (
           <>
             <div className="author-photo">

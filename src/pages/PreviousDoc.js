@@ -57,9 +57,9 @@ export default class PreviousDoc extends Component {
   render() {
     const { doctors, activeAnswers, loading } = this.state;
 
-    if (loading) {
-      return <div>Loading...</div>;
-    }
+    // if (loading) {
+    //   return <div>Loading...</div>;
+    // }
 
     return (
       <div className="container">
@@ -94,8 +94,8 @@ export default class PreviousDoc extends Component {
                 </div>
               </div>
             ))
-          ) : (
-            <div>No doctors found</div>
+          ) : (<div></div>
+            // <div>No doctors found</div>
           )}
         </div>
       </div>

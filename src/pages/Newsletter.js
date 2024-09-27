@@ -73,12 +73,7 @@ export default function Newsletter() {
             <div className="newsletter-description">
                 <div className="title">Why Join Our Newsletter?</div>
                 <p>
-                    Stay up-to-date with the latest news, updates, and insights
-                    from the Doctor Network. Our newsletter provides valuable
-                    information, exclusive offers, and expert advice to help
-                    you stay informed and connected. Sign up today to join our
-                    community of healthcare professionals and take advantage of
-                    all the benefits we have to offer.
+                Stay up-to-date with the latest from AspireMed by joining our newsletter! You'll get updates on new physicians, specialties, Zoom sessions, and answered questions, plus insights directly from the experts. Sign up today to be part of an exclusive network of pre-health students and healthcare professionals, and stay informed with valuable advice and opportunities!
                 </p>
             </div>
         </div>

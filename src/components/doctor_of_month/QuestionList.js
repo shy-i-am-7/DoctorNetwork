@@ -93,7 +93,7 @@ export default class QuestionList extends Component{
     return(
       <div className="questions-and-answers-container">
         <div className="box questions-list" style={{ flex: 1.5 }}>
-          <div className="title">Submitted Questions</div>
+          <div className="title">Your Submitted Questions</div>
           {/* {loadingQuestions ? (
             <div className="loading-indicator" id="loading-indicator">Loading...</div>
           ) : ( */}
@@ -127,7 +127,7 @@ export default class QuestionList extends Component{
                   <div className="answer-text"> This question currently does not have an answer. </div>
                 </div>
               ) : (
-              <div className="placeholder-text">Click on a question on the left to see the response.</div>
+              <div className="placeholder-text">Click on a question on the left to see the response.<br/>Come back later if your question hasn't been answered!</div>
             )}
           </div>
         </div>

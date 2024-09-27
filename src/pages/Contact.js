@@ -5,24 +5,25 @@ function Contact() {
   return (
     <div className="dn-contact-container">
       <div className="dn-contact-box dn-contact-about">
-        <h2 className="dn-contact-title">About Doctor Network</h2>
+        <h2 className="dn-contact-title">About AspireMed</h2>
         <div className="dn-contact-highlight">
           <p><strong>Founded:</strong> August 2024</p>
-          <p><strong>Founder:</strong> A passionate undergraduate student at the University of South Carolina</p>
+          <p><strong>Founder:</strong> Shyam Ganesh Babu</p>
           <p><strong>Co-founder:</strong> Dr. Cecilia Fernandes</p>
           <p><strong>Supported by:</strong> Various physicians and healthcare professionals</p>
         </div>
-        <p>Doctor Network was born from a vision to empower pre-health students with comprehensive resources for their medical journey. Our mission is to bridge the gap between aspiring medical professionals and experienced physicians.</p>
+        <p>AspireMed was born from a vision to empower pre-health students with comprehensive resources for their medical journey. Our mission is to bridge the gap between aspiring medical professionals and experienced physicians.</p>
         <p>We offer a unique platform that provides:</p>
         <ul className="dn-contact-list">
-          <li>Exclusive shadowing opportunities</li>
-          <li>Personalized mentorship programs</li>
+          
+          <li>Personalized mentorship from physicians</li>
           <li>Expert advice from practicing physicians</li>
-          <li>Networking events and forums</li>
+          <li>Networking events, calls, and Zoom Sessions</li>
+          <li>Potential exclusive shadowing opportunities</li>
         </ul>
         <p>Our goal is to nurture the next generation of healthcare providers by offering real-world insights and guidance from those already in the field.</p>
         <div className="dn-contact-highlight">
-          <p><strong>Getting Started:</strong> Visit our "Doctor of the Month" page to begin interacting with featured physicians and exploring shadowing opportunities!</p>
+          <p><strong>Getting Started:</strong> Check out our "Doctor of the Month" page to connect with featured physicians! Ask them anything—from personal insights to professional expertise—and dive into their specialties!</p>
         </div>
         <div className="dn-contact-button-container dn-contact-button-container-spaced">
           <a href="/" className="dn-contact-cta-button">Visit Doctor of the Month</a>
@@ -55,7 +56,7 @@ function Contact() {
             <span className="dn-contact-info-value">Undergraduate student studying pre-med at the University of South Carolina</span>
           </div>
         </div>
-        <p>We encourage reaching out from:</p>
+        <p><br />We encourage reaching out if you are:</p>
         <ul className="dn-contact-list">
           <li>Pre-health students at any educational level</li>
           <li>Medical professionals interested in mentoring</li>
