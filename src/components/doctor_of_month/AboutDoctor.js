@@ -53,7 +53,7 @@ export default class AboutDoctor extends Component {
         {lastDoctor ? (
           <>
             <div className="author-photo">
-              <img src={lastDoctor.image} alt="Doctor" />
+              <img src={lastDoctor.image} alt="Doctor"/>
             </div>
             <div className="author-name">{lastDoctor.name}</div>
             <div className="author-description">{lastDoctor.description}</div>
