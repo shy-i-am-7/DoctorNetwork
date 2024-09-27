@@ -49,6 +49,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
+  .author-photo {
+    width: 50%;  /* Adjust size as needed */
+    height: 50%;  /* Keep the width and height equal */
+    border-radius: 10%;
+    object-fit: cover;  /* Ensures the image covers the container */
+    overflow: hidden;
+  }
+
   #questions-content{
     padding: 10px;
   }
