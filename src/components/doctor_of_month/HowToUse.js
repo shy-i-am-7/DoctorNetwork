@@ -3,7 +3,7 @@ import React from 'react';
 function HowToUse() {
   return (
     <div className="box how-to-use">
-      <div className="title">How to Use AspireMed</div>
+      <div className="title">How to Use PhysiLink</div>
       <div className="content">
         <p className="changeable-font">
         Each month, we feature a new physician from a different specialty, ready to answer your questions--whether they're about their personal journey or professional expertise. Ask anything and explore their field!

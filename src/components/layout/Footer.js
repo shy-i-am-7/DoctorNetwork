@@ -9,7 +9,7 @@ function Footer() {
 
       </div>
       <div className="header-title" style={{ fontSize: '10px' }}>
-        AspireMed<br></br>Website created with the help of Naveen Chithan and Kishore Balakrishnan.
+        PhysiLink<br></br>Website created with the help of Naveen Chithan and Kishore Balakrishnan.
       </div>
     </div>
   );

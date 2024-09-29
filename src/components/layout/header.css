@@ -2,7 +2,7 @@
     background: linear-gradient(90deg, #3299db, #56c8f9);
     color: white;
     text-align: center;
-    padding: 15px 20px;
+    padding: 10px 15px;
     font-size: 28px;
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -27,3 +27,12 @@
   .header-title {
     vertical-align: middle;
   }
+
+  .header-slogan {
+    font-size: 10px;
+    color: #ffffff;
+    margin-top: 2px;
+    text-align: center;
+    font-style: italic;
+  }
+  

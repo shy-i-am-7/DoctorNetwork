@@ -5,14 +5,14 @@ function Contact() {
   return (
     <div className="dn-contact-container">
       <div className="dn-contact-box dn-contact-about">
-        <h2 className="dn-contact-title">About AspireMed</h2>
+        <h2 className="dn-contact-title">About PhysiLink</h2>
         <div className="dn-contact-highlight">
           <p><strong>Founded:</strong> August 2024</p>
           <p><strong>Founder:</strong> Shyam Ganesh Babu</p>
           <p><strong>Co-founder:</strong> Dr. Cecilia Fernandes</p>
           <p><strong>Supported by:</strong> Various physicians and healthcare professionals</p>
         </div>
-        <p>AspireMed was born from a vision to empower pre-health students with comprehensive resources for their medical journey. Our mission is to bridge the gap between aspiring medical professionals and experienced physicians.</p>
+        <p>PhysiLink was born from a vision to empower pre-health students with comprehensive resources for their medical journey. Our mission is to bridge the gap between aspiring medical professionals and experienced physicians.</p>
         <p>We offer a unique platform that provides:</p>
         <ul className="dn-contact-list">
           
