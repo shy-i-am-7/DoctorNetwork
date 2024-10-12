@@ -11,10 +11,13 @@ const DoctorCard = ({ doctor, onQuestionSelect }) => {
             openDropdown.classList.remove("show");
           }
         }
+        // event.preventDefault();
       }
+      
     };
 
     window.addEventListener("click", handleClickOutside);
+    
 
     return () => {
       window.removeEventListener("click", handleClickOutside);
@@ -58,12 +61,20 @@ const DoctorCard = ({ doctor, onQuestionSelect }) => {
             <div className="dropdown-content">
               {doctor.questions &&
                 doctor.questions.map((question, index) => (
-                  <a href="#" key={index} onClick={() => onQuestionSelect(index)}>
+                  <a href="#!" key={index} onClick={() => onQuestionSelect(index)}>
                     {question}
                   </a>
                 ))}
             </div>
           </div>
+        </div>
+        <div className="webinar-wrapper">
+          {doctor.webinarLink != null ? (
+              <a className="webinarbtn" href={doctor.webinarLink}  target="_blank" rel="noreferrer" aria-label="Link to Webinar"><span>{doctor.webinarButtonName}</span></a>
+            ):(
+              <div></div>
+            )
+          }
         </div>
       </div>
     </div>
