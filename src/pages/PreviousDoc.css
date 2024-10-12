@@ -126,12 +126,26 @@ body {
     border: none;
     cursor: pointer;
     width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.webinarbtn {
+    background-color: #3299db;
+    color: white;
+    padding: 10px 14px;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
     text-align: left;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
-.dropbtn:hover {
+.dropbtn:hover, .webinarbtn:hover {
     background-color: #2980b9;
 }
 
