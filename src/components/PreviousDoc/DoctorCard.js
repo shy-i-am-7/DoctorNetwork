@@ -32,7 +32,7 @@ const DoctorCard = ({ doctor, onQuestionSelect }) => {
     <div className="doctor-card">
       <div className="doctor-photo-name">
         <div className="doctor-photo">
-          <img src={doctor.photoUrl} alt={doctor.name} />
+          <img srcSet={doctor.photoURL} alt={doctor.name} />
         </div>
         <h2 className="doctor-name">Dr. {doctor.name}</h2>
       </div>
@@ -42,7 +42,7 @@ const DoctorCard = ({ doctor, onQuestionSelect }) => {
           <span className="info-label">Specialty:</span> {doctor.specialty}
         </div>
         <div className="info-item">
-          <span className="info-label">Graduated:</span> {doctor.graduated}
+          <span className="info-label">Years in Practice:</span> {doctor.graduated}
         </div>
         <div className="info-item">
           <span className="info-label">Currently working at:</span> {doctor.currentWork}

@@ -45,7 +45,7 @@ function Contact() {
           </div>
           <div className="dn-contact-info-item">
             <span className="dn-contact-info-label">Email:</span>
-            <span className="dn-contact-info-value">shyamgb2022@gmail.com</span>
+            <span className="dn-contact-info-value">physilink2024@gmail.com</span>
           </div>
           <div className="dn-contact-info-item">
             <span className="dn-contact-info-label">Phone:</span>
@@ -66,6 +66,9 @@ function Contact() {
         <p>Your support, ideas, and collaborations are invaluable to us as we work to enhance the journey of future medical professionals.</p>
         <div className="dn-contact-button-container">
           <a href="mailto:shyamgb2022@gmail.com" className="dn-contact-cta-button">Contact Us Now</a>
+          <br></br>
+          <br></br>
+          <a href="https://www.linkedin.com/company/physilink/" className="dn-contact-cta-button">LinkedIn</a>
         </div>
       </div>
     </div>

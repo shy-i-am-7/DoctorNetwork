@@ -63,6 +63,16 @@ const Navbarcomp= () =>{
         <NavLink
           activeClassName="sub-header-tab active"
           className="sub-header-tab"
+          to="https://www.youtube.com/@PhysiLink"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => setExpanded(false)}
+        >
+          Webinars
+        </NavLink>
+        <NavLink
+          activeClassName="sub-header-tab active"
+          className="sub-header-tab"
           to="/Contact"
           onClick={() => setExpanded(false)}
         >
