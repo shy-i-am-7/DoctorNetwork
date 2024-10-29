@@ -57,8 +57,12 @@ export default class AboutDoctor extends Component {
             </div>
             <div className="author-name">{lastDoctor.name}</div>
             <div className="author-description">{lastDoctor.description}</div>
-            <a href={lastDoctor.learnmore} className="submit-button">
+            <a href={lastDoctor.learnmore} className="aboutdoc-button">
               Click here to learn more
+            </a>
+
+            <a href={lastDoctor.webinarLink}  target="_blank" rel="noreferrer" className="aboutdoc-button">
+              Webinar
             </a>
           </>
         ) : (

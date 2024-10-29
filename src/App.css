@@ -94,6 +94,25 @@ body {
 .submit-button:hover, .another-question-button:hover {
   background-color: #165f96;
 }
+
+.aboutdoc-button {
+  background-color: #3299db;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin: 10px auto;
+}
+.aboutdoc-button:hover {
+  background-color: #165f96;
+}
+
 .author-photo {
   width: calc(100% - 40px);
   border-radius: 5px;
