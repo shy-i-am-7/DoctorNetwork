@@ -62,7 +62,7 @@ export default class AboutDoctor extends Component {
             </a>
 
             <a href={lastDoctor.webinarLink}  target="_blank" rel="noreferrer" className="aboutdoc-button">
-              Webinar
+            {lastDoctor.ButtonName}
             </a>
           </>
         ) : (
