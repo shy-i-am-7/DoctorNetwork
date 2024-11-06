@@ -65,7 +65,7 @@ function Contact() {
         </ul>
         <p>Your support, ideas, and collaborations are invaluable to us as we work to enhance the journey of future medical professionals.</p>
         <div className="dn-contact-button-container">
-          <a href="mailto:shyamgb2022@gmail.com" className="dn-contact-cta-button">Contact Us Now</a>
+          <a href="mailto:physilink2024@gmail.com" className="dn-contact-cta-button">Contact Us Now</a>
           <br></br>
           <br></br>
           <a href="https://www.linkedin.com/company/physilink/" className="dn-contact-cta-button">LinkedIn</a>
