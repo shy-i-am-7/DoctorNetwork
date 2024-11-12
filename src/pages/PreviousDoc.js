@@ -88,13 +88,23 @@ export default class PreviousDoc extends Component {
                         <h4>
                           <strong>{doctor.questions[activeAnswers[index]]}</strong>
                         </h4>
-                        <p>{doctor.answers[activeAnswers[index]]}</p>
+                        <p>
+                          {doctor.answers[activeAnswers[index]]
+                            .split("//n")
+                            .map((line, i) => (
+                              <span key={i}>
+                                {line}
+                                <br />
+                              </span>
+                            ))}
+                        </p>
                       </div>
                     )}
                 </div>
               </div>
             ))
-          ) : (<div></div>
+          ) : (
+            <div></div>
             // <div>No doctors found</div>
           )}
         </div>
