@@ -1,28 +1,28 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-const DoctorCard = ({ doctor, onQuestionSelect }) => {
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.matches(".dropbtn")) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          const openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains("show")) {
-            openDropdown.classList.remove("show");
-          }
-        }
-        // event.preventDefault();
-      }
+const DoctorCard = ({doctor}) => {
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (!event.target.matches(".dropbtn")) {
+  //       const dropdowns = document.getElementsByClassName("dropdown-content");
+  //       for (let i = 0; i < dropdowns.length; i++) {
+  //         const openDropdown = dropdowns[i];
+  //         if (openDropdown.classList.contains("show")) {
+  //           openDropdown.classList.remove("show");
+  //         }
+  //       }
+  //       // event.preventDefault();
+  //     }
       
-    };
+  //   };
 
-    window.addEventListener("click", handleClickOutside);
+  //   window.addEventListener("click", handleClickOutside);
     
 
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("click", handleClickOutside);
+  //   };
+  // }, []);
 
   if (!doctor) {
     return null;
@@ -50,7 +50,7 @@ const DoctorCard = ({ doctor, onQuestionSelect }) => {
         <div className="info-item">
           <span className="info-label">Favorite pastime:</span> {doctor.hobby}
         </div>
-        <div className="questions-section">
+        {/* <div className="questions-section">
           <div className="dropdown">
             <button
               onClick={(e) => e.target.nextElementSibling.classList.toggle("show")}
@@ -67,7 +67,7 @@ const DoctorCard = ({ doctor, onQuestionSelect }) => {
                 ))}
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="webinar-wrapper">
           {doctor.webinarLink != null ? (
               <a className="webinarbtn" href={doctor.webinarLink}  target="_blank" rel="noreferrer" aria-label="Link to Webinar"><span>{doctor.webinarButtonName}</span></a>
