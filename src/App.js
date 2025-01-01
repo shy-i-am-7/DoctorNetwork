@@ -27,6 +27,8 @@ function App() {
         {/* Add routes for resident pages */}
         <Route path='/RESIDENT_OF_MONTH_ROUTE' Component={DoctorOfMonth} />
         <Route path='/PREVIOUS_RESIDENTS_ROUTE' Component={PreviousDoc} />
+        <Route path='/' element={<DoctorOfMonth isPhysician={isPhysician} />} 
+/>
       </Routes>
       <Footer isPhysician={isPhysician} />
     </Router>
