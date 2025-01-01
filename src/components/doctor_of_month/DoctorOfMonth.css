@@ -1,73 +1,107 @@
-.container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 20px auto 0 auto;
-  }
-  .container2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    padding: 20px;
-    margin: 20px auto 0 auto;
-  }
-
-  .module-spacer {
-    height: 0px;
-  }
-
-  .questions-and-answers-container {
-    display: flex;
-    gap: 60px;
-  }
-
-  .answer {
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-
-  .item {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-
-  .answer-question {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .box {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .author-photo {
-    width: 50%;  /* Adjust size as needed */
-    height: 50%;  /* Keep the width and height equal */
-    border-radius: 10%;
-    object-fit: cover;  /* Ensures the image covers the container */
-    overflow: hidden;
-  }
-
-  #questions-content{
-    padding: 10px;
-  }
-
-  .no-answer {
-    font-weight: bold;
-    color: #f44336;
-    text-align: center;
-    padding: 20px;
-    background-color: #ffebee;
-    border-radius: 5px;
-    margin-top: 20px;
+/* Theme-specific colors */
+.physician-theme {
+  --primary-color: #3299db;
+  --primary-light: #e6f3fa;
+  --primary-hover: rgba(50, 153, 219, 0.2);
 }
 
+.resident-theme {
+  --primary-color: #EA4335;
+  --primary-light: #fdecea;
+  --primary-hover: rgba(234, 67, 53, 0.2);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto 0 auto;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  padding: 20px;
+  margin: 20px auto 0 auto;
+}
+
+.module-spacer {
+  height: 0px;
+}
+
+.questions-and-answers-container {
+  display: flex;
+  gap: 60px;
+}
+
+.answer {
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.item {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.answer-question {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--primary-light);
+}
+
+.author-photo {
+  width: 50%;
+  height: 50%;
+  border-radius: 10%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+#questions-content {
+  padding: 10px;
+}
+
+.no-answer {
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-light);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Additional theme-specific styles for child components */
+.physician-theme .box {
+  border-color: #e6f3fa;
+}
+
+.resident-theme .box {
+  border-color: #fdecea;
+}
+
+.physician-theme .no-answer {
+  color: #3299db;
+  background-color: #e6f3fa;
+}
+
+.resident-theme .no-answer {
+  color: #EA4335;
+  background-color: #fdecea;
+}

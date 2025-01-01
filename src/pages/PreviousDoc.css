@@ -19,15 +19,18 @@ body {
     gap: 20px;
     justify-content: flex-start;
     width: 100%;
+    align-items: stretch;
 }
 
 .doctor-card-wrapper {
     flex: 0 1 calc(33.333% - 14px);
     min-width: 300px;
     padding: 0;
+    display: flex;
 }
 
 .doctor-card {
+    display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: 10px;
@@ -81,6 +84,14 @@ body {
 
 .doctor-info-left {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+}
+
+.doctor-top-content {
+    flex: 0 0 auto;
 }
 
 .doctor-description {
@@ -99,6 +110,17 @@ body {
     color: #3299db;
 }
 
+.button-container {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-wrapper,
+.webinar-wrapper {
+    width: 100%;
+}
+
 .webinarbtn {
     display: flex;
     background-color: #3299db;
@@ -113,6 +135,12 @@ body {
     border-radius: 4px;
     justify-content: center;
     transition: background-color 0.3s ease;
+}
+
+.breaktag1 {
+    display: block;
+    content: "";
+    margin-top: 8px;
 }
 
 .webinarbtn:hover {
