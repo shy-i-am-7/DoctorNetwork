@@ -8,12 +8,15 @@ import QuestionsList from '../components/doctor_of_month/QuestionList';
 function DoctorOfMonth({ isPhysician }) {
   return (
     <div className={isPhysician ? 'physician-theme' : 'resident-theme'}>
-      <div className="container">
-        <AboutDoctor isPhysician={isPhysician} />
-        <AskQuestion isPhysician={isPhysician} />
+      <div className="how-to-use-container">
         <HowToUse isPhysician={isPhysician} />
       </div>
-      <div className="module-spacer"></div>
+      <div className="main-content-container">
+        <div className="doctor-info-container">
+          <AboutDoctor isPhysician={isPhysician} />
+          <AskQuestion isPhysician={isPhysician} />
+        </div>
+      </div>
       <div className="container2">
         <QuestionsList isPhysician={isPhysician} />
       </div>

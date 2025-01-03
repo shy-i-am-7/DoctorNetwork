@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import AboutDataService from "../../services/abtdoctor.service";
 
 export default class AboutDoctor extends Component {
-
   constructor(props) {
     super(props);
     this.retrieveDoctors = this.retrieveDoctors.bind(this);
@@ -26,9 +25,6 @@ export default class AboutDoctor extends Component {
         },
         this.getLastDoctor
       );
-        
-        console.log(response);
-        //console.log(response.image);
       })
       .catch(e => {
         console.log(e);
@@ -40,35 +36,38 @@ export default class AboutDoctor extends Component {
     this.setState({
       lastDoctor : doctorList[doctorList.length - 1]
     });
-    //console.log(lastDoctor);
   }
 
-
-  render(){
+  render() {
     const { lastDoctor } = this.state;
 
     return (
-      <div className="box about-author">
-        <div className="title">About the Doctor of the Month</div>
-        {lastDoctor ? (
-          <>
-            <div className="author-photo">
-              <img src={lastDoctor.image} alt="Doctor"/>
-            </div>
-            <div className="author-name">{lastDoctor.name}</div>
-            <div className="author-description">{lastDoctor.description}</div>
-            <a href={lastDoctor.learnmore} className="aboutdoc-button">
+      <>
+        <div className="box doctor-photo-box">
+          <div className="title">Doctor of the Month</div>
+          <div className="author-photo">
+            <img src={lastDoctor?.image} alt="Doctor"/>
+          </div>
+          <div className="author-name">{lastDoctor?.name}</div>
+        </div>
+        <div className="box doctor-info-box">
+          <div className="author-title">About the Doctor</div>
+          <div className="author-description">{lastDoctor?.description}</div>
+          <div className="author-buttons">
+            <a href={lastDoctor?.learnmore} className="aboutdoc-button">
               Click here to learn more
             </a>
-
-            <a href={lastDoctor.webinarLink}  target="_blank" rel="noreferrer" className="aboutdoc-button">
-            {lastDoctor.ButtonName}
+            <a 
+              href={lastDoctor?.webinarLink} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="aboutdoc-button"
+            >
+              {lastDoctor?.ButtonName}
             </a>
-          </>
-        ) : (
-          <div>Loading doctor data...</div>
-        )}
-      </div>
+          </div>
+        </div>
+      </>
     );
   }
 }

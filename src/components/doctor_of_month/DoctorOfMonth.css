@@ -1,4 +1,3 @@
-/* Theme-specific colors */
 .physician-theme {
   --primary-color: #3299db;
   --primary-light: #e6f3fa;
@@ -11,52 +10,170 @@
   --primary-hover: rgba(234, 67, 53, 0.2);
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
+/* Layout containers */
+.how-to-use-container {
+  max-width: 90%;
   margin: 20px auto 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.how-to-use-container .box {
+  width: 100%;
+  padding: 15px 20px 12px;
+}
+
+.how-to-use-content-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.how-to-use-text {
+  flex: 4;
+}
+
+.how-to-use-video {
+  position: absolute;
+  top: -10px;
+  right: 40px;
+  width: 180px;
+  height: 101px;
+  z-index: 1;
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.how-to-use-container .box .title {
+  margin-bottom: 10px;
+}
+
+.main-content-container {
+  max-width: 90%;
+  margin: 15px auto 0 auto;
+  padding: 0 20px;
+}
+
+.doctor-info-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .container2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  max-width: 1200px;
-  padding: 20px;
-  margin: 20px auto 0 auto;
+  max-width: 90%;
+  padding: 0 20px;
+  margin: 20px auto 60px auto;
 }
 
-.module-spacer {
-  height: 0px;
-}
-
+/* Questions and Answers Layout */
 .questions-and-answers-container {
   display: flex;
   gap: 60px;
+  margin-bottom: 60px;
 }
 
-.answer {
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.questions-list {
+  flex: 1.5;
 }
 
-.item {
+.answers-list {
+  flex: 3;
+}
+
+/* About Doctor Styles */
+.doctor-photo-box {
+  flex: 1.8;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
 }
 
-.answer-question {
+.doctor-info-box {
+  flex: 2.2;
+  padding: 20px;
+}
+
+.ask-question-box {
+  flex: 1;
+  padding: 20px;
+}
+
+.ask-question-box input,
+.ask-question-box textarea {
+  padding: 0 25px;
+  width: calc(100% - 50px);
+}
+
+.ask-question-box button {
+  width: calc(100% - 50px);
+  margin: 0 25px;
+}
+
+.author-photo {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 10%;
+  overflow: hidden;
+}
+
+.author-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-name {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+}
+
+.author-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
   color: var(--primary-color);
 }
 
+.author-description {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.author-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aboutdoc-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.aboutdoc-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Keep existing styles for box, items, etc. */
 .box {
   background: white;
   padding: 20px;
@@ -65,43 +182,35 @@
   border: 1px solid var(--primary-light);
 }
 
-.author-photo {
-  width: 50%;
-  height: 50%;
-  border-radius: 10%;
-  object-fit: cover;
-  overflow: hidden;
-}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .how-to-use-container,
+  .main-content-container,
+  .container2 {
+    max-width: 95%;
+    padding: 0 10px;
+  }
 
-#questions-content {
-  padding: 10px;
-}
+  .how-to-use-video {
+    position: static;
+    width: 180px;
+    margin: 10px auto;
+  }
 
-.no-answer {
-  font-weight: bold;
-  color: var(--primary-color);
-  text-align: center;
-  padding: 20px;
-  background-color: var(--primary-light);
-  border-radius: 5px;
-  margin-top: 20px;
-}
+  .doctor-info-container {
+    flex-direction: column;
+  }
 
-/* Additional theme-specific styles for child components */
-.physician-theme .box {
-  border-color: #e6f3fa;
-}
+  .questions-and-answers-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.resident-theme .box {
-  border-color: #fdecea;
-}
-
-.physician-theme .no-answer {
-  color: #3299db;
-  background-color: #e6f3fa;
-}
-
-.resident-theme .no-answer {
-  color: #EA4335;
-  background-color: #fdecea;
+  .ask-question-box input,
+  .ask-question-box textarea,
+  .ask-question-box button {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    padding: 0 10px;
+  }
 }
