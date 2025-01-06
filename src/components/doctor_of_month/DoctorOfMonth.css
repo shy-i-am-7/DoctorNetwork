@@ -4,7 +4,7 @@
   --primary-hover: rgba(50, 153, 219, 0.2);
 }
 
-.resident-theme  {
+.resident-theme {
   --primary-color: #EA4335;
   --primary-light: #fdecea;
   --primary-hover: rgba(234, 67, 53, 0.2);
@@ -29,26 +29,25 @@
   align-items: flex-start;
 }
 
-.how-to-use-text {
-  flex: 4;
+.how-to-use-text-column {
+  flex: 1;
 }
 
-.how-to-use-font{
-  color: black; 
-}
-
-.how-to-use-video {
-  position: absolute;
-  top: -10px;
-  right: 40px;
+.how-to-use-video-column {
   width: 180px;
-  height: 101px;
-  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 15px
+}
+
+.how-to-use-font {
+  color: black;
 }
 
 .video-wrapper {
   width: 100%;
-  height: 100%;
+  height: 101px;
 }
 
 .video-wrapper iframe {
@@ -118,8 +117,7 @@
   margin-bottom: 15px;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group input, .form-group textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 8px;
@@ -183,7 +181,6 @@
 .aboutdoc-button {
   display: inline-block;
   padding: 10px 20px;
-  /* background-color: var(--primary-color); */
   background-color: #3299db;
   color: white;
   text-decoration: none;
@@ -193,11 +190,10 @@
 }
 
 .aboutdoc-button:hover {
-  /* background-color: var(--primary-hover); */
   background-color: rgba(50, 153, 219, 0.2)
 }
 
-/* Keep existing styles for box, items, etc. */
+/* Box styles */
 .box {
   background: white;
   padding: 20px;
@@ -215,8 +211,12 @@
     padding: 0 10px;
   }
 
-  .how-to-use-video {
-    position: static;
+  .how-to-use-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how-to-use-video-column {
     width: 180px;
     margin: 10px auto;
   }

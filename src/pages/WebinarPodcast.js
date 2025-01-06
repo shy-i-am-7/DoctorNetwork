@@ -42,7 +42,7 @@ export default function WebinarPodcast() {
                 <div className="content-list">
                     {podcasts.map((podcast, index) => (
                         <div key={index} className="content-item">
-                            <h3>{podcast.title}</h3>
+                            <h3><b>{podcast.title}</b></h3>
                             <p>{podcast.description}</p>
                             <div className="podcast-player">
                                 <iframe 
@@ -65,7 +65,7 @@ export default function WebinarPodcast() {
                 <div className="content-list">
                     {webinars.map((webinar, index) => (
                         <div key={index} className="content-item">
-                            <h3>{webinar.title}</h3>
+                            <h3><b>{webinar.title}</b></h3>
                             <p>{webinar.description}</p>
                             <div className="video-container">
                                 <iframe
