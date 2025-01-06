@@ -1,10 +1,10 @@
-.physician-theme {
+.physican-theme {
   --primary-color: #3299db;
   --primary-light: #e6f3fa;
   --primary-hover: rgba(50, 153, 219, 0.2);
 }
 
-.resident-theme {
+.resident-theme  {
   --primary-color: #EA4335;
   --primary-light: #fdecea;
   --primary-hover: rgba(234, 67, 53, 0.2);
@@ -31,6 +31,9 @@
 
 .how-to-use-text {
   flex: 4;
+}
+.how-to-use-font{
+  color: black; 
 }
 
 .how-to-use-video {
@@ -161,7 +164,8 @@
 .aboutdoc-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background-color: #3299db;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -170,7 +174,8 @@
 }
 
 .aboutdoc-button:hover {
-  background-color: var(--primary-hover);
+  /* background-color: var(--primary-hover); */
+  background-color: rgba(50, 153, 219, 0.2)
 }
 
 /* Keep existing styles for box, items, etc. */

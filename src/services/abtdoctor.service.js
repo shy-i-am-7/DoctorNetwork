@@ -1,6 +1,6 @@
 import http from "../http-common";
 
-class AboutDataService {
+class AboutDoctorService {
   async getAll() {
     let content = await http.get("https://doctornetwork-aboutdoc-default-rtdb.firebaseio.com/aboutdoctor.json");
     content = Object.values(content.data)
@@ -29,4 +29,4 @@ class AboutDataService {
   }
 }
 
-export default new AboutDataService();
+export default new AboutDoctorService();

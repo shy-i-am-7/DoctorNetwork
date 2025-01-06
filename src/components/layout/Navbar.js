@@ -3,7 +3,7 @@ import "./navbar.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 
-const NavbarComp = ({ isPhysician, setIsPhysician }) => {
+const NavbarComp = ({ isPhysician, onClick }) => {
   const [expanded, setExpanded] = React.useState(false);
   const location = useLocation();
 
@@ -33,13 +33,13 @@ const NavbarComp = ({ isPhysician, setIsPhysician }) => {
             <div className="doctor-toggle">
               <button
                 className={`toggle-btn ${isPhysician ? 'active physician' : ''}`}
-                onClick={() => setIsPhysician(true)}
+                onClick={onClick}
               >
                 Physician
               </button>
               <button
                 className={`toggle-btn ${!isPhysician ? 'active resident' : ''}`}
-                onClick={() => setIsPhysician(false)}
+                onClick={onClick}
               >
                 Resident
               </button>
@@ -49,45 +49,44 @@ const NavbarComp = ({ isPhysician, setIsPhysician }) => {
         <Navbar.Toggle className='ms-auto' aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <NavLink 
-              exact 
-              activeClassName="sub-header-tab active" 
-              className="sub-header-tab" 
+          <NavLink 
               to={isPhysician ? "/" : "/RESIDENT_OF_MONTH_ROUTE"} 
+              className={({ isActive }) =>
+                `sub-header-tab ${isActive ? 'active' : ''}`
+              } 
               onClick={() => setExpanded(false)}
             >
               {isPhysician ? 'Doctor of the Month' : 'Resident of the Month'}
             </NavLink>
             <NavLink 
-              activeClassName="sub-header-tab active" 
-              className="sub-header-tab" 
               to={isPhysician ? "/PreviousDoc" : "/PREVIOUS_RESIDENTS_ROUTE"} 
+              className={({ isActive }) => `sub-header-tab ${isActive ? 'active' : ''}`} 
               onClick={() => setExpanded(false)}
             >
               {isPhysician ? 'Previous Doctors' : 'Previous Residents'}
             </NavLink>
+
             <NavLink 
-              activeClassName="sub-header-tab active" 
-              className="sub-header-tab" 
               to="/Newsletter" 
+              className={({ isActive }) => `sub-header-tab ${isActive ? 'active' : ''}`} 
               onClick={() => setExpanded(false)}
             >
               Join Newsletter
             </NavLink>
-            <NavLink 
-              activeClassName="sub-header-tab active" 
-              className="sub-header-tab" 
-              to="https://www.youtube.com/@PhysiLink" 
+
+            <a 
+              href="https://www.youtube.com/@PhysiLink" 
               target="_blank" 
               rel="noreferrer" 
+              className="sub-header-tab"
               onClick={() => setExpanded(false)}
             >
               Webinars
-            </NavLink>
+            </a>
+
             <NavLink 
-              activeClassName="sub-header-tab active" 
-              className="sub-header-tab" 
               to="/Contact" 
+              className={({ isActive }) => `sub-header-tab ${isActive ? 'active' : ''}`} 
               onClick={() => setExpanded(false)}
             >
               About/Contact
