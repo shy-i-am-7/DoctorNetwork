@@ -103,7 +103,7 @@ export default class AboutDoctor extends Component {
             <div className="title">Doctor of the Month</div>
             <div className="author-photo">
               <img src={lastDoctor?.image} alt="Doctor"/>
-            </div>
+            </div> <br></br>
             <div className="author-name">{lastDoctor?.name}</div>
           </div>
           <div className="box doctor-info-box">

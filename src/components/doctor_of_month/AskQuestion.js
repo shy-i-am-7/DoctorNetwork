@@ -104,7 +104,7 @@ export default class AskQuestion extends Component {
   render(){
     //const [confirmation, setConfirmation] = useState(null);
     return (
-      <div className="box ask-question">
+      <div className="box ask-question-box">
         <div className="title">Ask a Question!</div>
         {!this.state.submitted ? (
           <form id="question-form" onSubmit={this.saveForm}>

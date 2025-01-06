@@ -10,7 +10,7 @@ function HowToUse() {
             Each month, we feature a physician from a different specialty to answer your questions about their journey and expertise. Ask anything and check back for answers! At month's end, Q&As move to "Previous Doctor" page. <b>Join our newsletter</b> for updates on new doctors and answered questions. To connect with these doctors personally, visit our <b>contact page</b>.
           </p>
         </div>
-        <div className="how-to-use-video">
+        {/* <div className="how-to-use-video">
           <div className="video-wrapper">
             <iframe
               src="https://www.youtube.com/embed/t5c3KFWqmH4"
@@ -19,7 +19,7 @@ function HowToUse() {
               allowFullScreen
             ></iframe>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -32,6 +32,7 @@
 .how-to-use-text {
   flex: 4;
 }
+
 .how-to-use-font{
   color: black; 
 }
@@ -97,33 +98,49 @@
 
 /* About Doctor Styles */
 .doctor-photo-box {
-  flex: 1.8;
+  flex: 30;
   padding: 20px;
 }
 
 .doctor-info-box {
-  flex: 2.2;
+  flex: 40;
   padding: 20px;
+  text-align: left;
 }
 
 .ask-question-box {
-  flex: 1;
+  flex: 25;
   padding: 20px;
 }
 
-.ask-question-box input,
-.ask-question-box textarea {
-  padding: 0 25px;
-  width: calc(100% - 50px);
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 .ask-question-box button {
-  width: calc(100% - 50px);
-  margin: 0 25px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .author-photo {
-  width: 100%;
+  width: 60%;
   max-width: 300px;
   margin: 0 auto;
   border-radius: 10%;
@@ -139,12 +156,12 @@
 .author-name {
   text-align: center;
   margin-top: 15px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
 .author-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 15px;
   color: var(--primary-color);
@@ -153,6 +170,8 @@
 .author-description {
   margin-bottom: 20px;
   line-height: 1.5;
+  text-align: left;
+  font-size: 0.95rem;
 }
 
 .author-buttons {
@@ -211,11 +230,9 @@
     gap: 20px;
   }
 
-  .ask-question-box input,
-  .ask-question-box textarea,
+  .form-group input,
+  .form-group textarea,
   .ask-question-box button {
-    width: calc(100% - 20px);
-    margin: 0 10px;
-    padding: 0 10px;
+    width: 100%;
   }
 }

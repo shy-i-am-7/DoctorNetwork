@@ -74,15 +74,13 @@ const NavbarComp = ({ isPhysician, onClick }) => {
               Join Newsletter
             </NavLink>
 
-            <a 
-              href="https://www.youtube.com/@PhysiLink" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="sub-header-tab"
+            <NavLink 
+              to="/WebinarPodcast" 
+              className={({ isActive }) => `sub-header-tab ${isActive ? 'active' : ''}`} 
               onClick={() => setExpanded(false)}
             >
-              Webinars
-            </a>
+              Webinar/Podcast
+            </NavLink>
 
             <NavLink 
               to="/Contact" 
