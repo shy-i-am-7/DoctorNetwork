@@ -14,7 +14,8 @@ function DoctorOfMonth({ isPhysician }) {
   // }
   console.log("DoctorOfMonth" + isPhysician);
   return (
-    <div className={{isPhysician} ? 'physician-theme' : 'resident-theme'}>
+    <div className={{isPhysician} ? 'physicin-theme' : 'resident-theme'}> 
+    {/* INTENTIONAL TYPO IN PHYSICIAN ^ */}
       {/* {isPhysician} */}
       <div className="how-to-use-container">
         <HowToUse isPhysician={isPhysician} />
