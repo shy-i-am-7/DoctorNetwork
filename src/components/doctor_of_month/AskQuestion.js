@@ -1,20 +1,9 @@
 import { useState } from 'react';
 import React, { Component } from "react";
 import FormDataService from "../../services/form.service";
+import FormResDataService from "../../services/formres.service";
 
 export default class AskQuestion extends Component {
-  
-//function AskQuestion() {
-  //const [formSubmitted, setFormSubmitted] = useState(false);
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   setFormSubmitted(true);
-  // };
-
-  // const handleAnotherQuestion = () => {
-  //   setFormSubmitted(false);
-  // };
   constructor(props) {
     super(props);
     this.onChangeName = this.onChangeName.bind(this);
@@ -31,8 +20,8 @@ export default class AskQuestion extends Component {
       question: "",
       answer: "",
       completed: false,
-
-      submitted: false
+      submitted: false,
+      isPhysicianDetails: props.isPhysician ?? true,
     };
   }
 
@@ -67,8 +56,8 @@ export default class AskQuestion extends Component {
       question: this.state.question,
       answer:"Answer then Mark as complete"
     };
-
-    FormDataService.create(data)
+    if(this.state.isPhysicianDetails === true){
+      FormDataService.create(data)
       .then(response => {
         this.setState({
           id: response.data.id,
@@ -85,6 +74,26 @@ export default class AskQuestion extends Component {
       .catch(e => {
         console.log(e);
       });
+    } else {
+      FormResDataService.create(data)
+      .then(response => {
+        this.setState({
+          id: response.data.id,
+          name: response.data.name,
+          email: response.data.email,
+          question: response.data.question,
+          answer: response.data.answer,
+          completed: response.data.completed,
+
+          submitted: true
+        });
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+    }
+    
   }
 
   newForm() {
