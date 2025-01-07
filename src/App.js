@@ -30,7 +30,7 @@ function App() {
         <Route path='/contact' Component={contact} />
         <Route path='/WebinarPodcast' Component={WebinarPodcast} />  {/* Add this route */}
         {/* Add routes for resident pages */}
-        <Route path='/RESIDENT_OF_MONTH_ROUTE' Component={DoctorOfMonth} />
+        <Route path='/RESIDENT_OF_MONTH_ROUTE' Component={() => <DoctorOfMonth isPhysician={isPhysician ?? true} />}  />
         <Route path='/PREVIOUS_RESIDENTS_ROUTE' Component={PreviousDoc} />
         <Route path='/' Component={() => <DoctorOfMonth isPhysician={isPhysician ?? true} />}  />
       </Routes>
