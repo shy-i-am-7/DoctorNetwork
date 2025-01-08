@@ -1,29 +1,6 @@
 import React from "react";
 
-const DoctorCard = ({doctor}) => {
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (!event.target.matches(".dropbtn")) {
-  //       const dropdowns = document.getElementsByClassName("dropdown-content");
-  //       for (let i = 0; i < dropdowns.length; i++) {
-  //         const openDropdown = dropdowns[i];
-  //         if (openDropdown.classList.contains("show")) {
-  //           openDropdown.classList.remove("show");
-  //         }
-  //       }
-  //       // event.preventDefault();
-  //     }
-      
-  //   };
-
-  //   window.addEventListener("click", handleClickOutside);
-    
-
-  //   return () => {
-  //     window.removeEventListener("click", handleClickOutside);
-  //   };
-  // }, []);
-
+const DoctorCard = ({ doctor, onDoctorSelect }) => {
   if (!doctor) {
     return null;
   }
@@ -52,43 +29,21 @@ const DoctorCard = ({doctor}) => {
             <span className="info-label">Favorite pastime:</span> {doctor.hobby}
           </div>
         </div>
-        {/* <div className="questions-section">
-          <div className="dropdown">
-            <button
-              onClick={(e) => e.target.nextElementSibling.classList.toggle("show")}
-              className="dropbtn"
-            >
-              Select a question
-            </button>
-            <div className="dropdown-content">
-              {doctor.questions &&
-                doctor.questions.map((question, index) => (
-                  <a href="#!" key={index} onClick={() => onQuestionSelect(index)}>
-                    {question}
-                  </a>
-                ))}
-            </div>
-          </div>
-        </div> */}
         <div className="button-container">
           <div className="info-wrapper">
-            {doctor.docinfoName != null ? (
-              <a 
+            {doctor.docinfoName != null && (
+              <button 
                 className="webinarbtn" 
-                href="#placeholder-link" 
-                target="_blank" 
-                rel="noreferrer" 
-                aria-label="Additional Doctor Information"
+                onClick={() => onDoctorSelect(doctor)}
+                aria-label="View Doctor Details"
               >
                 <span>{doctor.docinfoName}</span>
-              </a>
-            ) : (
-              <div></div>
+              </button>
             )}
           </div>
-          <br className="breaktag1"></br>
+          <br className="breaktag1" />
           <div className="webinar-wrapper">
-            {doctor.webinarLink != null ? (
+            {doctor.webinarLink != null && (
               <a 
                 className="webinarbtn" 
                 href={doctor.webinarLink}  
@@ -98,8 +53,6 @@ const DoctorCard = ({doctor}) => {
               >
                 <span>{doctor.webinarButtonName}</span>
               </a>
-            ) : (
-              <div></div>
             )}
           </div>
         </div>

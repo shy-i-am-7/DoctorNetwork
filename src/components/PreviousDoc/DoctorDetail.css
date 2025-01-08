@@ -1,0 +1,301 @@
+:root {
+  --primary-color: #3299db;
+  --primary-light: #e6f3fa;
+  --primary-hover: rgba(50, 153, 219, 0.2);
+  --border-color: #e5e7eb;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --error-red: #dc2626;
+}
+
+.doctor-detail-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 40px);
+}
+
+/* Doctor Info Section */
+.doctor-info-section {
+  width: 35%;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: white;
+  border: 2px solid var(--error-red);
+  border-radius: 50%;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--error-red);
+  box-shadow: var(--card-shadow);
+  z-index: 10;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  padding: 0;
+  line-height: 0;
+}
+
+.close-button span {
+  margin-bottom: 2px; /* Added to move × up */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button:hover {
+  background-color: var(--error-red);
+  color: white;
+  transform: scale(1.05);
+}
+
+.close-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: -25px;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.close-button:hover .close-tooltip {
+  opacity: 1;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+  position: relative;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-photo {
+  margin-bottom: 16px;
+}
+
+.doctor-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.doctor-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.doctor-info {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.doctor-description {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  color: var(--text-secondary);
+  word-wrap: break-word;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Q&A Section */
+.qa-section {
+  width: 65%;
+  height: 100%;
+}
+
+.qa-box {
+  background: white;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--primary-light);
+  height: 100%;
+  display: flex;
+}
+
+.questions-column {
+  flex: 1.8;
+  border-right: 1px solid var(--primary-light);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.answers-column {
+  flex: 2.7;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.item {
+  display: flex;
+  padding: 16px;
+  border-bottom: 1px solid var(--primary-light);
+  transition: background-color 0.2s;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: var(--primary-hover);
+}
+
+.item-number {
+  color: var(--primary-color);
+  font-weight: 600;
+  min-width: 24px;
+}
+
+.item-text {
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.answer {
+  padding: 16px;
+}
+
+.answer-question {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+  word-wrap: break-word;
+}
+
+.answer-text {
+  line-height: 1.6;
+  color: #4b5563;
+  word-wrap: break-word;
+}
+
+.no-answer {
+  padding: 16px;
+  color: #6b7280;
+}
+
+.placeholder-text {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 32px 16px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .doctor-detail-container {
+    flex-direction: column;
+  }
+
+  .doctor-info-section,
+  .qa-section {
+    width: 100%;
+  }
+
+  .info-card {
+    height: auto;
+    min-height: fit-content;
+  }
+
+  .qa-box {
+    flex-direction: column;
+    height: 600px;
+  }
+
+  .questions-column {
+    border-right: none;
+    border-bottom: 1px solid var(--primary-light);
+    max-height: 300px;
+  }
+
+  .questions-column,
+  .answers-column {
+    flex: none;
+  }
+
+  .item, .answer, .no-answer {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .doctor-detail-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .info-card,
+  .questions-column,
+  .answers-column {
+    padding: 12px;
+  }
+
+  .qa-box {
+    height: 500px;
+  }
+
+  .close-button {
+    top: 12px;
+    left: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+}
