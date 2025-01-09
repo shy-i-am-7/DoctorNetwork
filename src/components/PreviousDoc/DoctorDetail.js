@@ -10,29 +10,24 @@ export default class DoctorDetail extends Component {
 
     this.state = {
       questions: [],
+      answers: [],
       selectedQuestion: null
     };
   }
 
   componentDidMount() {
-    this.retrieveQuestions();
+    // this.retrieveQuestions();
   }
 
   retrieveQuestions() {
-    FormDataService.getAll()
-      .then(response => {
-        const sortedQuestions = response.sort((a, b) => 
-          parseInt(a.id) - parseInt(b.id)
-        );
-        this.setState({ questions: sortedQuestions });
-      })
-      .catch(e => {
-        console.log(e);
-      });
+    this.state.questions = this.props.doctor.questions;
+    this.state.answers = this.props.doctor.answers;
+    console.log(this.state.questions);
+    console.log(this.state.answers);
   }
 
-  setSelectedQuestion(question) {
-    this.setState({ selectedQuestion: question });
+  setSelectedQuestion(index) {
+    this.setState({ selectedQuestion: index });
   }
 
   formatAnswer(answer) {
@@ -47,6 +42,7 @@ export default class DoctorDetail extends Component {
   render() {
     const { doctor, onClose } = this.props;
     const { questions, selectedQuestion } = this.state;
+    const { answers } = this.state;
 
     return (
       <div className="doctor-detail-container">
@@ -90,14 +86,15 @@ export default class DoctorDetail extends Component {
             <div className="questions-column">
               <div className="title">Questions</div>
               <div className="content changeable-font">
-                {questions.map((question, index) => (
+                {doctor.questions.map((question, index) => (
                   <div
                     key={question.id}
-                    onClick={() => this.setSelectedQuestion(question)}
+                    onClick={() => this.setSelectedQuestion(index)}
                     className="item"
                   >
+                    {/* question.id */}
                     <div className="item-number">{index + 1}</div>
-                    <div className="item-text">{question.question}</div>
+                    <div className="item-text">{question}</div>
                   </div>
                 ))}
               </div>
@@ -107,17 +104,17 @@ export default class DoctorDetail extends Component {
             <div className="answers-column">
               <div className="title">Answers</div>
               <div className="content changeable-font">
-                {selectedQuestion ? (
-                  selectedQuestion.answer !== "Answer then Mark as complete" ? (
+                {doctor.answers[selectedQuestion] ? (
+                  doctor.answers[selectedQuestion] !== "Answer then Mark as complete" ? (
                     <div className="answer">
-                      <div className="answer-question">{selectedQuestion.question}</div>
+                      <div className="answer-question">{doctor.questions[selectedQuestion]}</div>
                       <div className="answer-text">
-                        {this.formatAnswer(selectedQuestion.answer)}
+                        {this.formatAnswer(doctor.answers[selectedQuestion])}
                       </div>
                     </div>
                   ) : (
                     <div className="no-answer">
-                      <div className="answer-question">{selectedQuestion.question}</div>
+                      <div className="answer-question">{doctor.questions[selectedQuestion]}</div>
                       <div className="answer-text">This question currently does not have an answer.</div>
                     </div>
                   )

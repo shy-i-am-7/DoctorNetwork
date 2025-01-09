@@ -38,6 +38,7 @@ export default class PreviousDoc extends Component {
 
   handleDoctorSelect(doctor) {
     this.setState({ selectedDoctor: doctor });
+    console.log(doctor);
   }
 
   handleClose() {
