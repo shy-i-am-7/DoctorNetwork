@@ -25,13 +25,13 @@ function App() {
       <Navbar isPhysician={isPhysician} onClick={togglePhysician} />
       <Routes>
         <Route path='/' Component={() => <DoctorOfMonth isPhysician={isPhysician ?? true} />}  />
-        <Route path='/PreviousDoc' Component={PreviousDoc} />
+        <Route path='/PreviousDoc' Component={() => <PreviousDoc isPhysician={isPhysician ?? true} />} />
         <Route path='/Newsletter' Component={Newsletter} />
         <Route path='/contact' Component={contact} />
         <Route path='/WebinarPodcast' Component={WebinarPodcast} />  {/* Add this route */}
         {/* Add routes for resident pages */}
-        <Route path='/RESIDENT_OF_MONTH_ROUTE' Component={() => <DoctorOfMonth isPhysician={isPhysician ?? true} />}  />
-        <Route path='/PREVIOUS_RESIDENTS_ROUTE' Component={PreviousDoc} />
+        <Route path='/ResidentOfMonth' Component={() => <DoctorOfMonth isPhysician={isPhysician ?? true} />}  />
+        <Route path='/PreviousRes' Component={() => <PreviousDoc isPhysician={isPhysician ?? true} />} />
         <Route path='/' Component={() => <DoctorOfMonth isPhysician={isPhysician ?? true} />}  />
       </Routes>
       <Footer isPhysician={isPhysician} />

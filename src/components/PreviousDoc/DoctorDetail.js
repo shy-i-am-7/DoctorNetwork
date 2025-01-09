@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import FormDataService from "../../services/form.service";
 import "./DoctorDetail.css";
 
 export default class DoctorDetail extends Component {
   constructor(props) {
     super(props);
-    this.retrieveQuestions = this.retrieveQuestions.bind(this);
+    // this.retrieveQuestions = this.retrieveQuestions.bind(this);
     this.setSelectedQuestion = this.setSelectedQuestion.bind(this);
 
     this.state = {
@@ -19,12 +18,12 @@ export default class DoctorDetail extends Component {
     // this.retrieveQuestions();
   }
 
-  retrieveQuestions() {
-    this.state.questions = this.props.doctor.questions;
-    this.state.answers = this.props.doctor.answers;
-    console.log(this.state.questions);
-    console.log(this.state.answers);
-  }
+  // retrieveQuestions() {
+  //   this.state.questions = this.props.doctor.questions;
+  //   this.state.answers = this.props.doctor.answers;
+  //   console.log(this.state.questions);
+  //   console.log(this.state.answers);
+  // }
 
   setSelectedQuestion(index) {
     this.setState({ selectedQuestion: index });

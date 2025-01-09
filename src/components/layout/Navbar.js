@@ -29,7 +29,7 @@ const NavbarComp = ({ isPhysician, onClick }) => {
       <div className='container-fluid'>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Navbar.Brand className=''>{getBrandName()}</Navbar.Brand>
-          {(location.pathname === '/' || location.pathname === '/RESIDENT_OF_MONTH_ROUTE') && (
+          {(location.pathname === '/' || location.pathname === '/ResidentOfMonth' || location.pathname === '/PreviousDoc' || location.pathname === '/PreviousRes') && (
             <div className="doctor-toggle">
               <button
                 className={`toggle-btn ${isPhysician ? 'active physician' : ''}`}
@@ -50,7 +50,7 @@ const NavbarComp = ({ isPhysician, onClick }) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
           <NavLink 
-              to={isPhysician ? "/" : "/RESIDENT_OF_MONTH_ROUTE"} 
+              to={isPhysician ? "/" : "/ResidentOfMonth"} 
               className={({ isActive }) =>
                 `sub-header-tab ${isActive ? 'active' : ''}`
               } 
@@ -59,7 +59,7 @@ const NavbarComp = ({ isPhysician, onClick }) => {
               {isPhysician ? 'Doctor of the Month' : 'Resident of the Month'}
             </NavLink>
             <NavLink 
-              to={isPhysician ? "/PreviousDoc" : "/PREVIOUS_RESIDENTS_ROUTE"} 
+              to={isPhysician ? "/PreviousDoc" : "/PreviousRes"} 
               className={({ isActive }) => `sub-header-tab ${isActive ? 'active' : ''}`} 
               onClick={() => setExpanded(false)}
             >
