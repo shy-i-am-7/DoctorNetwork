@@ -28,7 +28,7 @@ export default function Newsletter() {
     return (
         <div className="container">
             <div className="box join-newsletter">
-                <div className="title">Stay Updated with Our Newsletter</div>
+                <div className="title newsletter-title">Stay Updated with Our Newsletter</div>
                 {!confirmation ? (
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -72,8 +72,18 @@ export default function Newsletter() {
             </div>
             <div className="newsletter-description">
                 <div className="title">Why Join Our Newsletter?</div>
-                <p>
-                Stay up-to-date with the latest from PhysiLink by joining our newsletter! You'll get updates on new physicians, specialties, Zoom sessions, and answered questions, plus insights directly from the experts. Sign up today to be part of an exclusive network of pre-health students and healthcare professionals, and stay informed with valuable advice and opportunities!
+                <p className="newsletter-content">
+                    <strong>Stay Connected with PhysiLink!</strong> Join our newsletter and be the first to know about:
+                </p>
+                <ul className="newsletter-benefits">
+                    <li><strong>New Physicians & Residents:</strong> Meet inspiring professionals and learn from their journeys.</li>
+                    <li><strong>Featured Specialties:</strong> Explore different fields in healthcare every week.</li>
+                    <li><strong>Exclusive Webinars:</strong> Gain insights and tips directly from industry experts.</li>
+                    <li><strong>Updated Resources:</strong> Access fresh study materials, Q&A sessions, and more.</li>
+                    <li><strong>Career Guidance:</strong> Get advice and opportunities designed to elevate your pre-health path.</li>
+                </ul>
+                <p className="newsletter-cta">
+                    ✨ Don't miss out—join our vibrant community of pre-health students and healthcare professionals today!
                 </p>
             </div>
         </div>

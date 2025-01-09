@@ -1,3 +1,15 @@
+/* Add the color variables at the top */
+:root {
+    --primary-color: #3299db;
+    --primary-color-dark: #165f96;
+}
+
+/* Add triggered state colors */
+:root.triggered {
+    --primary-color: #ff0000;
+    --primary-color-dark: #cc0000;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -9,7 +21,7 @@ body {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 90%;
     margin: 20px auto 0 auto;
 }
 
@@ -32,8 +44,8 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* .title {
-    font-size: 20px;
+.title {
+    font-size: 22px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
@@ -47,12 +59,13 @@ body {
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #3299db;
+    background-color: var(--primary-color);
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-} */
+    transition: background-color 0.3s ease;
+}
 
 .form-group {
     margin-bottom: 20px;
@@ -74,14 +87,14 @@ body {
     transition: border-color 0.3s ease;
 }
 
-/* .form-group input:focus {
-    border-color: #3299db;
+.form-group input:focus {
+    border-color: var(--primary-color);
     outline: none;
     box-shadow: 0 0 5px rgba(50, 153, 219, 0.3);
 }
 
 .submit-button {
-    background-color: #3299db;
+    background-color: var(--primary-color);
     color: white;
     padding: 8px 20px;
     border: none;
@@ -94,13 +107,13 @@ body {
     display: block;
     margin: 10px auto;
     position: relative;
+    width: 100%
 }
 
 .submit-button:hover {
-    background-color: #165f96;
+    background-color: var(--primary-color-dark);
 }
 
-.submit-button */
 .loading-icon {
     display: inline-block;
     border: 4px solid #fff;
@@ -109,7 +122,8 @@ body {
     width: 20px;
     height: 20px;
     animation: spin 1s linear infinite;
-} 
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -136,14 +150,40 @@ body {
     box-sizing: border-box;
 }
 
-.newsletter-description .title {
-    font-size: 24px;
-    margin-bottom: 10px;
+.newsletter-content {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-.newsletter-description p {
+.newsletter-benefits {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.newsletter-benefits li {
     color: #555;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
     line-height: 1.5;
+}
+
+.newsletter-benefits li:before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    transition: color 0.3s ease;
+}
+
+.newsletter-cta {
+    color: #555;
+    line-height: 1.6;
+    margin-top: 20px;
+    font-weight: 500;
 }
 
 @media only screen and (max-width: 768px) {
@@ -170,11 +210,9 @@ body {
         padding: 10px;
     }
 
-    .newsletter-description .title {
-        font-size: 20px;
-    }
-
-    .newsletter-description p {
+    .newsletter-content,
+    .newsletter-benefits li,
+    .newsletter-cta {
         font-size: 14px;
     }
 }
@@ -194,11 +232,9 @@ body {
         padding: 8px;
     }
 
-    .newsletter-description .title {
-        font-size: 18px;
-    }
-
-    .newsletter-description p {
+    .newsletter-content,
+    .newsletter-benefits li,
+    .newsletter-cta {
         font-size: 12px;
     }
 }

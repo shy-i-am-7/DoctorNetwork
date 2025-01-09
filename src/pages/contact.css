@@ -16,7 +16,7 @@ html[data-theme="resident"] {
     flex-direction: row;
     gap: 30px;
     padding: 20px;
-    max-width: 80%;
+    max-width: 90%;
     width: 100%;
     margin: 20px auto;
   }
@@ -65,8 +65,8 @@ html[data-theme="resident"] {
     font-size: 16px;
   }
   
-  .dn-contact-highlight {
-    background-color: #e6f3fa;
+  .dn-contact-highlight { 
+    background-color: #ebebeb;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -74,7 +74,7 @@ html[data-theme="resident"] {
   
   .dn-contact-info-details {
     margin-top: 25px;
-    background-color: #f9f9f9;
+    background-color: #ebebeb;
     padding: 20px;
     border-radius: 10px;
   }

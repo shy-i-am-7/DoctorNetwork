@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './WebinarPodcast.css';
 import WebinarPodcastService from '../services/webinar-podcast.service.js';
 
-export default function WebinarPodcast() {
+export default function WebinarPodcast({ isPhysician }) {
     const [podcasts, setPodcasts] = useState([]);
     const [webinars, setWebinars] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', isPhysician ? 'physician' : 'resident');
+    }, [isPhysician]);
+
+    // Rest of your component code remains exactly the same
     useEffect(() => {
         const fetchData = async () => {
             try {
