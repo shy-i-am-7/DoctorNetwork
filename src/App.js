@@ -5,7 +5,7 @@ import Header from './components/layout/Header';
 import DoctorOfMonth from "./pages/DoctorOfMonth"
 import PreviousDoc from "./pages/PreviousDoc"
 import Newsletter from "./pages/Newsletter"
-import contact from "./pages/Contact"
+import Contact from "./pages/Contact"
 import WebinarPodcast from "./pages/WebinarPodcast"  // Add this import
 import Footer from "./components/layout/Footer";
 import { useState } from 'react';
@@ -16,6 +16,7 @@ function App() {
   const togglePhysician = () => {
     const newValue = (isPhysician === true ? false : true)
     setIsPhysician(newValue);
+    document.documentElement.setAttribute('data-theme', newValue? "physican" : "resident");
     console.log("after " + newValue);
   }
   
@@ -27,7 +28,7 @@ function App() {
         <Route path='/' Component={() => <DoctorOfMonth isPhysician={isPhysician ?? true} />}  />
         <Route path='/PreviousDoc' Component={() => <PreviousDoc isPhysician={isPhysician ?? true} />} />
         <Route path='/Newsletter' Component={Newsletter} />
-        <Route path='/contact' Component={contact} />
+        <Route path='/contact' Component={() => <Contact isPhysician={isPhysician ?? true} />}  />
         <Route path='/WebinarPodcast' Component={WebinarPodcast} />  {/* Add this route */}
         {/* Add routes for resident pages */}
         <Route path='/ResidentOfMonth' Component={() => <DoctorOfMonth isPhysician={isPhysician ?? true} />}  />

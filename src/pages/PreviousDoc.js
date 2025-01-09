@@ -79,6 +79,7 @@ export default class PreviousDoc extends Component {
   render() {
     const { doctors, selectedDoctor, residents, selectedResident, isPhysicianDetails } = this.state;
     if(isPhysicianDetails){
+      document.documentElement.setAttribute('data-theme', isPhysicianDetails? "physican" : "resident");
       if (selectedDoctor) {
         return <DoctorDetail doctor={selectedDoctor} onClose={this.handleDocClose} />;
       }
@@ -104,6 +105,7 @@ export default class PreviousDoc extends Component {
         </div>
       );
     } else {
+      document.documentElement.setAttribute('data-theme', isPhysicianDetails? "physican" : "resident");
       if (selectedResident) {
         return <DoctorDetail doctor={selectedResident} onClose={this.handleResClose} />;
       }

@@ -1,7 +1,8 @@
 import React from 'react';
 import './contact.css';
 
-function Contact() {
+function Contact(isPhysician) {
+  document.documentElement.setAttribute('data-theme', isPhysician? "physican" : "resident");
   return (
     <div className="dn-contact-container">
       <div className="dn-contact-box dn-contact-about">

@@ -1,3 +1,15 @@
+html {
+  --primary-color: #3299db;
+  --primary-light: #e6f3fa;
+  --primary-hover: rgba(50, 153, 219, 0.2);
+}
+
+html[data-theme="resident"] {
+  --primary-color: #EA4335;
+  --primary-light: #fdecea;
+  --primary-hover: rgba(234, 67, 53, 0.2);
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -12,7 +24,7 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 20px;
-  color: #283e52;
+  color: black;
   position: relative;
   padding-bottom: 10px;
 }
@@ -21,7 +33,7 @@ body {
   display: block;
   width: 50px;
   height: 3px;
-  background-color: #3299db;
+  background-color: var(--primary-color);
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -34,13 +46,13 @@ body {
   display: flex;
   flex-direction: column;
 }
-.title {
+/* .title {
   position: sticky;
   top: 0;
   background-color: white;
   z-index: 1;
   padding-top: 10px;
-}
+} */
 .content {
   padding-top: 10px;
   flex: 1;
@@ -70,7 +82,7 @@ body {
   flex: 1;
 }
 .submit-button, .another-question-button {
-  background-color: #3299db;
+  background-color: var(--primary-color);
   color: white;
   padding: 8px 20px;
   border: none;
@@ -84,11 +96,11 @@ body {
   margin: 10px auto;
 }
 .submit-button:hover, .another-question-button:hover {
-  background-color: #165f96;
+  background-color: var(--primary-hover);
 }
 
 .aboutdoc-button {
-  background-color: #3299db;
+  background-color: var(--primary-color);
   color: white;
   padding: 8px 20px;
   border: none;
@@ -102,7 +114,7 @@ body {
   margin: 10px auto;
 }
 .aboutdoc-button:hover {
-  background-color: #165f96;
+  background-color: var(--primary-hover);
 }
 
 .author-photo {
