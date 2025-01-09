@@ -11,7 +11,7 @@ function Contact({ isPhysician }) {
         <div className="dn-contact-container">
             <div className="dn-contact-box dn-contact-about">
                 <h2 className="dn-contact-title">About PhysiLink</h2>
-                <div className="dn-contact-info-details">
+                <div className="dn-contact-highlight">
                     <p><strong>Founded:</strong> August 2024</p>
                     <p><strong>Founder:</strong> Shyam Ganesh Babu</p>
                     <p><strong>Co-founder:</strong> Dr. Cecilia Fernandes</p>
