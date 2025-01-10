@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './WebinarPodcast.css';
 import WebinarPodcastService from '../services/webinar-podcast.service.js';
+import { useTheme } from '../ThemeContext';
 
-export default function WebinarPodcast({ isPhysician }) {
+export default function WebinarPodcast() {
+    const { isPhysician } = useTheme(); // Use ThemeContext to get isPhysician
     const [podcasts, setPodcasts] = useState([]);
     const [webinars, setWebinars] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Set the theme based on isPhysician
         document.documentElement.setAttribute('data-theme', isPhysician ? 'physician' : 'resident');
     }, [isPhysician]);
 
-    // Rest of your component code remains exactly the same
     useEffect(() => {
         const fetchData = async () => {
             try {

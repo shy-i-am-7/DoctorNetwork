@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './contact.css';
+import { useTheme } from '../ThemeContext';
 
-function Contact({ isPhysician }) {
-    // Use useEffect to handle side effects (theme switching)
+function Contact() {
+    const { isPhysician, toggleTheme } = useTheme(); // Access values from ThemeContext
+    const navigate = useNavigate(); // For navigation
+
     useEffect(() => {
+        // Update the theme dynamically based on isPhysician
         document.documentElement.setAttribute('data-theme', isPhysician ? 'physician' : 'resident');
     }, [isPhysician]);
 
@@ -24,11 +29,10 @@ function Contact({ isPhysician }) {
                 </p>
                 <p>We offer a unique platform that provides:</p>
                 <ul className="dn-contact-list">
-                <li>Personalized mentorship from physicians</li>
-                <li>Expert advice from practicing physicians and residents</li>
-                <li>Live webinars, Q&A sessions, and access to webinar and podcast recordings</li>
-                <li>Potential shadowing opportunities</li>
-
+                    <li>Personalized mentorship from physicians</li>
+                    <li>Expert advice from practicing physicians and residents</li>
+                    <li>Live webinars, Q&A sessions, and access to webinar and podcast recordings</li>
+                    <li>Potential shadowing opportunities</li>
                 </ul>
                 <p>
                     Our goal is to nurture the next generation of healthcare providers by offering real-world
@@ -42,8 +46,24 @@ function Contact({ isPhysician }) {
                     </p>
                 </div>
                 <div className="dn-contact-button-container dn-contact-button-container-spaced">
-                    <a href="/" className="dn-contact-cta-button">Visit Doctor of the Month</a>
-                    <a href="/ResidentOfMonth" className="dn-contact-cta-button-2">Visit Resident of the Month</a>
+                    <button
+                        className="dn-contact-cta-button"
+                        onClick={() => {
+                            if (!isPhysician) toggleTheme(); // Switch to physician theme if not already
+                            navigate('/'); // Navigate to the Doctors page
+                        }}
+                    >
+                        Visit Doctor of the Month
+                    </button>
+                    <button
+                        className="dn-contact-cta-button-2"
+                        onClick={() => {
+                            if (isPhysician) toggleTheme(); // Switch to resident theme if not already
+                            navigate('/ResidentOfMonth'); // Navigate to the Residents page
+                        }}
+                    >
+                        Visit Resident of the Month
+                    </button>
                 </div>
                 <div className="dn-contact-highlight">
                     <p>
@@ -53,8 +73,24 @@ function Contact({ isPhysician }) {
                     </p>
                 </div>
                 <div className="dn-contact-button-container">
-                    <a href="/PreviousDoc" className="dn-contact-cta-button">View Previous Doctors</a>
-                    <a href="/PreviousRes" className="dn-contact-cta-button-2">View Previous Residents</a>
+                    <button
+                        className="dn-contact-cta-button"
+                        onClick={() => {
+                            if (!isPhysician) toggleTheme(); // Switch to physician theme if not already
+                            navigate('/PreviousDoc'); // Navigate to the previous Doctors page
+                        }}
+                    >
+                        View Previous Doctors
+                    </button>
+                    <button
+                        className="dn-contact-cta-button-2"
+                        onClick={() => {
+                            if (isPhysician) toggleTheme(); // Switch to resident theme if not already
+                            navigate('/PreviousRes'); // Navigate to the previous Residents page
+                        }}
+                    >
+                        View Previous Residents
+                    </button>
                 </div>
             </div>
             <div className="dn-contact-box dn-contact-info-box">
@@ -93,15 +129,15 @@ function Contact({ isPhysician }) {
                     <a href="mailto:physilink2024@gmail.com" className="dn-contact-cta-button">Contact Us Now</a>
                     <a href="https://www.linkedin.com/company/physilink/" className="dn-contact-cta-button">LinkedIn</a>
                 </div>
-                <br></br><br></br>
+                <br /><br />
                 <h2 className="dn-contact-title">How to Use PhysiLink</h2>
-                <br></br>
+                <br />
                 <div className="video-wrapper-1">
                     <iframe
-                    src="https://www.youtube.com/embed/t5c3KFWqmH4"
-                    title="How to Use PhysiLink"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                        src="https://www.youtube.com/embed/t5c3KFWqmH4"
+                        title="How to Use PhysiLink"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
                     ></iframe>
                 </div>
             </div>

@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Newsletter.css';
 import NewsletterService from '../services/newsletter.service.js';
+import { useTheme } from '../ThemeContext';
 
 export default function Newsletter() {
+    const { isPhysician } = useTheme(); // Access isPhysician from ThemeContext
     const [formData, setFormData] = useState({ name: '', email: '' });
     const [loading, setLoading] = useState(false);
     const [confirmation, setConfirmation] = useState(null);
+
+    useEffect(() => {
+        // Update the theme dynamically based on isPhysician
+        document.documentElement.setAttribute('data-theme', isPhysician ? 'physician' : 'resident');
+    }, [isPhysician]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

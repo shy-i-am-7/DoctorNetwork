@@ -1,144 +1,98 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import FormDataService from "../../services/form.service";
 import FormResDataService from "../../services/formres.service";
+import { useTheme } from "../../ThemeContext";
 
-export default class AskQuestion extends Component {
-  constructor(props) {
-    super(props);
-    this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.onChangeQuestion = this.onChangeQuestion.bind(this);
-    this.saveForm = this.saveForm.bind(this);
-    this.newForm = this.newForm.bind(this);
-    //this.formPreventDefault = this.formPreventDefault.bind(this);
+const AskQuestion = ({ onQuestionSubmit }) => {
+  const { isPhysician } = useTheme();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    question: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-    this.state = {
-      id: null,
-      name: "",
-      email: "", 
-      question: "",
-      answer: "",
-      completed: false,
-      submitted: false,
-      isPhysicianDetails: props.isPhysician ?? true,
-    };
-  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-  onChangeName(e) {
-    this.setState({
-      name: e.target.value
-    });
-  }
-
-  onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    });
-  }
-
-  onChangeQuestion(e) {
-    this.setState({
-      question: e.target.value
-    });
-  }
-
-  // formPreventDefault(e) {
-  //   //alert('here');  
-  //   e.preventDefault();
-  // }
-
-  saveForm(event) {
+  const saveForm = (event) => {
     event.preventDefault();
-    var data = {
-      name: this.state.name,
-      email: this.state.email,
-      question: this.state.question,
-      answer:"Answer then Mark as complete"
+    const data = {
+      ...formData,
+      answer: "Answer then Mark as complete",
     };
-    if(this.state.isPhysicianDetails === true){
-      FormDataService.create(data)
-      .then(response => {
-        this.setState({
-          id: response.data.id,
-          name: response.data.name,
-          email: response.data.email,
-          question: response.data.question,
-          answer: response.data.answer,
-          completed: response.data.completed,
 
-          submitted: true
-        });
-        console.log(response.data);
+    const service = isPhysician ? FormDataService : FormResDataService;
+    service
+      .create(data)
+      .then(() => {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", question: "" }); // Reset form
+        if (onQuestionSubmit) {
+          onQuestionSubmit(); // Notify parent/sibling to refresh
+        }
       })
-      .catch(e => {
-        console.log(e);
-      });
-    } else {
-      FormResDataService.create(data)
-      .then(response => {
-        this.setState({
-          id: response.data.id,
-          name: response.data.name,
-          email: response.data.email,
-          question: response.data.question,
-          answer: response.data.answer,
-          completed: response.data.completed,
+      .catch((error) => console.error(error));
+  };
 
-          submitted: true
-        });
-        console.log(response.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-    }
-    
-  }
+  const newForm = () => {
+    setSubmitted(false);
+  };
 
-  newForm() {
-    this.setState({
-      id: null,
-      name: "",
-      email: "", 
-      question: "",
-      answer: "",
-      completed: false,
-
-      submitted: false
-    });
-  }
-
-
-  render(){
-    //const [confirmation, setConfirmation] = useState(null);
-    return (
-      <div className="box ask-question-box">
-        <div className="title">Ask a Question!</div>
-        {!this.state.submitted ? (
-          <form id="question-form" onSubmit={this.saveForm}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" required value={this.state.name} onChange={this.onChangeName}/>
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" required value={this.state.email} onChange={this.onChangeEmail}/>
-            </div>
-            <div className="form-group">
-              <label htmlFor="question">Question</label>
-              <textarea id="question" name="question" required value={this.state.question} onChange={this.onChangeQuestion}></textarea>
-            </div>
-            <button type="submit" className="submit-button" id="submit-button">Submit</button>
-          </form>
-        ) : (
-          <div className="form-message" id="form-response">
-            Your question has been submitted. Click here to submit another question!
-            <button className="another-question-button" onClick={this.newForm}>Submit another question</button>
+  return (
+    <div className="box ask-question-box">
+      <div className="title">Ask a Question!</div>
+      {!submitted ? (
+        <form id="question-form" onSubmit={saveForm}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
           </div>
-        )}
-      </div>
-    );
-  }
-}
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="question">Question</label>
+            <textarea
+              id="question"
+              name="question"
+              required
+              value={formData.question}
+              onChange={handleChange}
+            ></textarea>
+          </div>
+          <button type="submit" className="submit-button" id="submit-button">
+            Submit
+          </button>
+        </form>
+      ) : (
+        <div className="form-message" id="form-response">
+          Your question has been submitted. Click here to submit another question!
+          <button className="another-question-button" onClick={newForm}>
+            Submit another question
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
 
-//export default AskQuestion;
+export default AskQuestion;
+
