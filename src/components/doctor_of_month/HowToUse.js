@@ -15,7 +15,7 @@ function HowToUse() {
             <p className="how-to-use-font" style={{ margin: 0, lineHeight: '1.4' }}>
             Each month, we feature a physician and a resident from a different specialty to answer your questions about their journey and expertise. Ask anything, and check back for their answers! At the end of the month, Q&As are moved to the "Previous Physician/Resident" page.
 
- <b> Join our newsletter</b> to stay updated on new specialists, answered questions, webinar dates, and more. To connect with these doctors/residents personally, visit our <b>contact page</b>.            </p>
+ <b> Join our newsletter</b> to stay updated on new specialists, answered questions, webinar dates, and more. To connect with these physicians/residents personally, visit our <b>contact page</b>.            </p>
           </div>
         </div>
         <div className="how-to-use-video-column">
