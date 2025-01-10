@@ -1,10 +1,22 @@
+html {
+  --primary-color: #3299db;
+  --primary-light: #e6f3fa;
+  --primary-hover: rgba(50, 153, 219, 0.2);
+}
+
+html[data-theme="resident"] {
+  --primary-color: #EA4335;
+  --primary-light: #fdecea;
+  --primary-hover: rgba(234, 67, 53, 0.2);
+}
+
 /* Default (Desktop) Styles */
 .dn-contact-container {
     display: flex;
     flex-direction: row;
     gap: 30px;
     padding: 20px;
-    max-width: 80%;
+    max-width: 90%;
     width: 100%;
     margin: 20px auto;
   }
@@ -40,7 +52,7 @@
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #3299db;
+    background-color: var(--primary-color);
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -53,8 +65,8 @@
     font-size: 16px;
   }
   
-  .dn-contact-highlight {
-    background-color: #e6f3fa;
+  .dn-contact-highlight { 
+    background-color: #ebebeb;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -62,7 +74,7 @@
   
   .dn-contact-info-details {
     margin-top: 25px;
-    background-color: #f9f9f9;
+    background-color: #ebebeb;
     padding: 20px;
     border-radius: 10px;
   }
@@ -87,21 +99,57 @@
   .dn-contact-button-container {
     text-align: center;
     margin-top: 20px;
+    margin: 1px;
   }
+
+  .video-wrapper-1 {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 0;
+    margin-top:0px;
+}
+
+.video-wrapper-1 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
   
   .dn-contact-cta-button {
     display: inline-block;
     background-color: #3299db;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 20px;
+    margin: 15px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    border: none;
+  }
+
+  .dn-contact-cta-button-2 {
+    display: inline-block;
+    background-color:#EA4335;
+    color: white;
+    padding: 12px 20px;
+    margin: 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
   }
   
   .dn-contact-cta-button:hover {
-    background-color: #2980b9;
+    background-color: var(--primary-hover);
   }
   
   .dn-contact-list {

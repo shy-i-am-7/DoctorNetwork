@@ -1,17 +1,27 @@
 .footer {
-    background: linear-gradient(90deg, #3299db, #56c8f9);
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  .header-logo {
-    margin-right: 15px;
-  }
-  .header-logo img {
-    height: 40px;
-    vertical-align: middle;
-  }
-  .header-title {
-    vertical-align: middle;
-  }
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer.physician-theme {
+  background: linear-gradient(90deg, #3299db, #56c8f9);
+}
+
+.footer.resident-theme {
+  background: linear-gradient(90deg, #EA4335, #ff6b60);
+}
+
+.header-logo {
+  margin-right: 15px;
+}
+
+.header-logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+.header-title {
+  vertical-align: middle;
+}

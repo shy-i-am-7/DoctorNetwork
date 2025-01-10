@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Newsletter.css';
 import NewsletterService from '../services/newsletter.service.js';
+import { useTheme } from '../ThemeContext';
 
 export default function Newsletter() {
+    const { isPhysician } = useTheme(); // Access isPhysician from ThemeContext
     const [formData, setFormData] = useState({ name: '', email: '' });
     const [loading, setLoading] = useState(false);
     const [confirmation, setConfirmation] = useState(null);
+
+    useEffect(() => {
+        // Update the theme dynamically based on isPhysician
+        document.documentElement.setAttribute('data-theme', isPhysician ? 'physician' : 'resident');
+    }, [isPhysician]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,7 +35,7 @@ export default function Newsletter() {
     return (
         <div className="container">
             <div className="box join-newsletter">
-                <div className="title">Stay Updated with Our Newsletter</div>
+                <div className="title newsletter-title">Stay Updated with Our Newsletter</div>
                 {!confirmation ? (
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -72,8 +79,18 @@ export default function Newsletter() {
             </div>
             <div className="newsletter-description">
                 <div className="title">Why Join Our Newsletter?</div>
-                <p>
-                Stay up-to-date with the latest from PhysiLink by joining our newsletter! You'll get updates on new physicians, specialties, Zoom sessions, and answered questions, plus insights directly from the experts. Sign up today to be part of an exclusive network of pre-health students and healthcare professionals, and stay informed with valuable advice and opportunities!
+                <p className="newsletter-content">
+                    <strong>Stay Connected with PhysiLink!</strong> Join our newsletter and be the first to know about:
+                </p>
+                <ul className="newsletter-benefits">
+                    <li><strong>New Physicians & Residents:</strong> Meet inspiring professionals and learn from their journeys.</li>
+                    <li><strong>Featured Specialties:</strong> Explore different fields in healthcare every week.</li>
+                    <li><strong>Exclusive Webinars:</strong> Gain insights and tips directly from industry experts.</li>
+                    <li><strong>Updated Resources:</strong> Access fresh study materials, Q&A sessions, and more.</li>
+                    <li><strong>Career Guidance:</strong> Get advice and opportunities designed to elevate your pre-health path.</li>
+                </ul>
+                <p className="newsletter-cta">
+                    ✨ Don't miss out—join our vibrant community of pre-health students and healthcare professionals today!
                 </p>
             </div>
         </div>
