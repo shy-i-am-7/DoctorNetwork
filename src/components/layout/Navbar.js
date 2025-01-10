@@ -13,16 +13,16 @@ const NavbarComp = () => {
     switch (location.pathname) {
       case '/':
       case '/ResidentOfMonth':
-        return isPhysician ? 'Doctor of the Month' : 'Resident of the Month';
+        return isPhysician ? 'Physician of the Month' : 'Resident of the Month';
       case '/PreviousDoc':
       case '/PreviousRes':
-        return isPhysician ? 'Previous Doctors' : 'Previous Residents';
+        return isPhysician ? 'Previous Physicians' : 'Previous Residents';
       case '/Newsletter':
         return 'Join Newsletter';
       case '/Contact':
         return 'About/Contact';
       default:
-        return isPhysician ? 'Doctor of the Month' : 'Resident of the Month';
+        return isPhysician ? 'Physician of the Month' : 'Resident of the Month';
     }
   };
 
@@ -65,14 +65,14 @@ const NavbarComp = () => {
               } 
               onClick={() => setExpanded(false)}
             >
-              {isPhysician ? 'Doctor of the Month' : 'Resident of the Month'}
+              {isPhysician ? 'Physician of the Month' : 'Resident of the Month'}
             </NavLink>
             <NavLink 
               to={isPhysician ? "/PreviousDoc" : "/PreviousRes"} 
               className={({ isActive }) => `sub-header-tab ${isActive ? 'active' : ''}`} 
               onClick={() => setExpanded(false)}
             >
-              {isPhysician ? 'Previous Doctors' : 'Previous Residents'}
+              {isPhysician ? 'Previous Physicians' : 'Previous Residents'}
             </NavLink>
             <NavLink 
               to="/Newsletter" 

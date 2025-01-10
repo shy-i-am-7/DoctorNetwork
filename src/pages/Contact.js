@@ -20,11 +20,11 @@ function Contact() {
                     <p><strong>Founded:</strong> August 2024</p>
                     <p><strong>Founder:</strong> Shyam Ganesh Babu</p>
                     <p><strong>Co-founder:</strong> Dr. Cecilia Fernandes</p>
-                    <p><strong>Supported by:</strong> Healthcare Professionals and Students</p>
+                    <p><strong>Supported by:</strong> Healthcare professionals and students</p>
                 </div>
                 <p>
                     PhysiLink was born from a vision to empower pre-health students with comprehensive
-                    resources for their medical journey. Our mission is to bridge the gap between aspiring
+                    resources for their pre-health journey. Our mission is to bridge the gap between aspiring
                     medical professionals and experienced physicians & residents.
                 </p>
                 <p>We offer a unique platform that provides:</p>
@@ -40,9 +40,7 @@ function Contact() {
                 </p>
                 <div className="dn-contact-highlight">
                     <p>
-                        <strong>Getting Started:</strong> Check out our "Doctor of the Month" page to connect
-                        with featured physicians! Ask them anything—from personal insights to professional
-                        expertise—and dive into their specialties!
+                        <strong>Getting Started:</strong> Check out our "Physician of the Month" or "Resident of the Month" page to connect with featured physicians and residents. Ask them anything—from personal insights to professional expertise—and explore their specialties!
                     </p>
                 </div>
                 <div className="dn-contact-button-container dn-contact-button-container-spaced">
@@ -53,7 +51,7 @@ function Contact() {
                             navigate('/'); // Navigate to the Doctors page
                         }}
                     >
-                        Visit Doctor of the Month
+                        Visit Physician of the Month
                     </button>
                     <button
                         className="dn-contact-cta-button-2"
@@ -67,9 +65,7 @@ function Contact() {
                 </div>
                 <div className="dn-contact-highlight">
                     <p>
-                        <strong>Utilize the Doctor Database:</strong> Use our database of doctors from previous
-                        months to learn about additional specialties and view the questions that were asked.
-                        Utilize the contact page if you are interested in reaching out to a specific doctor.
+                        <strong>Utilize the  Database:</strong> Explore our database of physicians and residents from previous months to learn about their specialties and review the questions they’ve answered. If you’d like to connect with a specific doctor or resident, feel free to reach out to us for more information.
                     </p>
                 </div>
                 <div className="dn-contact-button-container">
@@ -80,7 +76,7 @@ function Contact() {
                             navigate('/PreviousDoc'); // Navigate to the previous Doctors page
                         }}
                     >
-                        View Previous Doctors
+                        View Previous Physicians
                     </button>
                     <button
                         className="dn-contact-cta-button-2"
@@ -134,7 +130,7 @@ function Contact() {
                 <br />
                 <div className="video-wrapper-1">
                     <iframe
-                        src="https://www.youtube.com/embed/t5c3KFWqmH4"
+                        src="https://www.youtube.com/embed/-1slFiAJLfY"
                         title="How to Use PhysiLink"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen

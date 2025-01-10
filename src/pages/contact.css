@@ -126,24 +126,26 @@ html[data-theme="resident"] {
     display: inline-block;
     background-color: #3299db;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 20px;
     margin: 15px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    border: none;
   }
 
   .dn-contact-cta-button-2 {
     display: inline-block;
     background-color:#EA4335;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 20px;
     margin: 15px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    border: none;
   }
   
   .dn-contact-cta-button:hover {

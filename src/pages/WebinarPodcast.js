@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './WebinarPodcast.css';
 import WebinarPodcastService from '../services/webinar-podcast.service.js';
 import { useTheme } from '../ThemeContext';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function WebinarPodcast() {
-    const { isPhysician } = useTheme(); // Use ThemeContext to get isPhysician
+    const { isPhysician, toggleTheme} = useTheme(); // Use ThemeContext to get isPhysician
     const [podcasts, setPodcasts] = useState([]);
     const [webinars, setWebinars] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate(); // For navigation
+
 
     useEffect(() => {
         // Set the theme based on isPhysician
@@ -46,6 +50,12 @@ export default function WebinarPodcast() {
         <div className="container">
             <div className="box">
                 <h2 className="title">Podcast Episodes</h2>
+                <div class="button-container-1">
+                <a href="https://open.spotify.com/show/1NAJ6C06ZY9okz4ekuiXqQ?si=77d61a92cd444e70" className="dn-contact-cta-button-3">Spotify</a>
+                <a href="https://music.amazon.com/podcasts/d7c2cff1-9577-4aa8-8600-ab4e06c637f0/the-physilink-podcast" className="dn-contact-cta-button-3">Amazon Music</a>
+                <a href="https://podcasts.apple.com/us/podcast/the-physilink-podcast/id1789244981" className="dn-contact-cta-button-3">Apple Podcast</a>
+                </div>
+
                 <div className="content-list">
                     {podcasts.map((podcast, index) => (
                         <div key={index} className="content-item">

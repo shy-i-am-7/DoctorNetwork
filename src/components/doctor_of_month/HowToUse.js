@@ -13,14 +13,15 @@ function HowToUse() {
           </div>
           <div className="how-to-use-text">
             <p className="how-to-use-font" style={{ margin: 0, lineHeight: '1.4' }}>
-              Each month, we feature a physician from a different specialty to answer your questions about their journey and expertise. Ask anything and check back for answers! At month's end, Q&As move to "Previous Doctor" page. <b>Join our newsletter</b> for updates on new doctors and answered questions. To connect with these doctors personally, visit our <b>contact page</b>.
-            </p>
+            Each month, we feature a physician and a resident from a different specialty to answer your questions about their journey and expertise. Ask anything, and check back for their answers! At the end of the month, Q&As are moved to the "Previous Physician/Resident" page.
+
+ <b> Join our newsletter</b> to stay updated on new specialists, answered questions, webinar dates, and more. To connect with these doctors/residents personally, visit our <b>contact page</b>.            </p>
           </div>
         </div>
         <div className="how-to-use-video-column">
           <div className="video-wrapper">
             <iframe
-              src="https://www.youtube.com/embed/t5c3KFWqmH4"
+              src="https://www.youtube.com/embed/-1slFiAJLfY"
               title="How to Use PhysiLink"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
