@@ -10,7 +10,6 @@ html[data-theme="resident"] {
   --primary-hover: rgba(234, 67, 53, 0.2);
 }
 
-
 /* Layout containers */
 .how-to-use-container {
   max-width: 90%;
@@ -34,16 +33,64 @@ html[data-theme="resident"] {
   flex: 1;
 }
 
+.how-to-use-text-column .title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-right: 30px;
+}
+
+.how-to-use-text-column .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.how-to-use-text-column .divider {
+  height: 2px;
+  background-color: var(--primary-color);
+  margin: 8px 0 16px;
+  width: 100%;
+}
+
+.how-to-use-newsletter-btn {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.how-to-use-newsletter-btn:hover {
+  background-color: var(--primary-hover);
+  color: var(--primary-color);
+}
+
 .how-to-use-video-column {
   width: 180px;
   flex-shrink: 0;
   display: flex;
   align-items: flex-start;
-  margin-top: 15px
+  margin-top: 10px;
 }
 
 .how-to-use-font {
   color: black;
+}
+.how-to-title{
+font-size: 25px;
+font-weight: 700;
+text-align: center;
+margin-bottom: 4px;
+margin-top: 11px;
+color: #283e52;
+position: relative;
+padding-bottom: 10px;
 }
 
 .video-wrapper {
@@ -57,10 +104,6 @@ html[data-theme="resident"] {
   border: none;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.how-to-use-container .box .title {
-  margin-bottom: 10px;
 }
 
 .main-content-container {
@@ -118,7 +161,8 @@ html[data-theme="resident"] {
   margin-bottom: 15px;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 8px;
@@ -220,6 +264,16 @@ html[data-theme="resident"] {
   .how-to-use-video-column {
     width: 180px;
     margin: 10px auto;
+  }
+
+  .how-to-use-text-column .title-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .how-to-use-newsletter-btn {
+    width: 100%;
   }
 
   .doctor-info-container {

@@ -5,7 +5,12 @@ function HowToUse() {
     <div className="box how-to-use">
       <div className="how-to-use-content-wrapper">
         <div className="how-to-use-text-column">
-          <div className="title">How to Use PhysiLink</div>
+          <div className="title-container">
+            <div className="how-to-title">How to Use PhysiLink</div>
+            <a href="/Newsletter">
+            <button className="how-to-use-newsletter-btn">Join the Newsletter for Updates!</button>
+            </a>
+          </div>
           <div className="how-to-use-text">
             <p className="how-to-use-font" style={{ margin: 0, lineHeight: '1.4' }}>
               Each month, we feature a physician from a different specialty to answer your questions about their journey and expertise. Ask anything and check back for answers! At month's end, Q&As move to "Previous Doctor" page. <b>Join our newsletter</b> for updates on new doctors and answered questions. To connect with these doctors personally, visit our <b>contact page</b>.

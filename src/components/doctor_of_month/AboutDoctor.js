@@ -82,7 +82,7 @@ export default class AboutDoctor extends Component {
             <div className="author-description">{lastResident?.description}</div>
             <div className="author-buttons">
               <a href={lastResident?.learnmore} className="aboutdoc-button">
-                Click here to learn more
+              {lastResident?.LearnMoreButtonName} 
               </a>
               <a 
                 href={lastResident?.webinarLink} 
@@ -111,7 +111,7 @@ export default class AboutDoctor extends Component {
             <div className="author-description">{lastDoctor?.description}</div>
             <div className="author-buttons">
               <a href={lastDoctor?.learnmore} className="aboutdoc-button">
-                Click here to learn more
+                {lastDoctor?.LearnMoreButtonName} 
               </a>
               <a 
                 href={lastDoctor?.webinarLink} 

@@ -15,19 +15,20 @@ function Contact({ isPhysician }) {
                     <p><strong>Founded:</strong> August 2024</p>
                     <p><strong>Founder:</strong> Shyam Ganesh Babu</p>
                     <p><strong>Co-founder:</strong> Dr. Cecilia Fernandes</p>
-                    <p><strong>Supported by:</strong> Various physicians and healthcare professionals</p>
+                    <p><strong>Supported by:</strong> Healthcare Professionals and Students</p>
                 </div>
                 <p>
                     PhysiLink was born from a vision to empower pre-health students with comprehensive
                     resources for their medical journey. Our mission is to bridge the gap between aspiring
-                    medical professionals and experienced physicians.
+                    medical professionals and experienced physicians & residents.
                 </p>
                 <p>We offer a unique platform that provides:</p>
                 <ul className="dn-contact-list">
-                    <li>Personalized mentorship from physicians</li>
-                    <li>Expert advice from practicing physicians</li>
-                    <li>Networking events, calls, and Zoom sessions</li>
-                    <li>Potential exclusive shadowing opportunities</li>
+                <li>Personalized mentorship from physicians</li>
+                <li>Expert advice from practicing physicians and residents</li>
+                <li>Live webinars, Q&A sessions, and access to webinar and podcast recordings</li>
+                <li>Potential shadowing opportunities</li>
+
                 </ul>
                 <p>
                     Our goal is to nurture the next generation of healthcare providers by offering real-world
@@ -42,6 +43,7 @@ function Contact({ isPhysician }) {
                 </div>
                 <div className="dn-contact-button-container dn-contact-button-container-spaced">
                     <a href="/" className="dn-contact-cta-button">Visit Doctor of the Month</a>
+                    <a href="/ResidentOfMonth" className="dn-contact-cta-button-2">Visit Resident of the Month</a>
                 </div>
                 <div className="dn-contact-highlight">
                     <p>
@@ -52,6 +54,7 @@ function Contact({ isPhysician }) {
                 </div>
                 <div className="dn-contact-button-container">
                     <a href="/PreviousDoc" className="dn-contact-cta-button">View Previous Doctors</a>
+                    <a href="/PreviousRes" className="dn-contact-cta-button-2">View Previous Residents</a>
                 </div>
             </div>
             <div className="dn-contact-box dn-contact-info-box">
@@ -74,12 +77,6 @@ function Contact({ isPhysician }) {
                         <span className="dn-contact-info-label">Phone:</span>
                         <span className="dn-contact-info-value">803-357-3579</span>
                     </div>
-                    <div className="dn-contact-info-item">
-                        <span className="dn-contact-info-label">Current Status:</span>
-                        <span className="dn-contact-info-value">
-                            Undergraduate student studying pre-med at the University of South Carolina
-                        </span>
-                    </div>
                 </div>
                 <p><br />We encourage reaching out if you are:</p>
                 <ul className="dn-contact-list">
@@ -94,9 +91,18 @@ function Contact({ isPhysician }) {
                 </p>
                 <div className="dn-contact-button-container">
                     <a href="mailto:physilink2024@gmail.com" className="dn-contact-cta-button">Contact Us Now</a>
-                    <br />
-                    <br />
                     <a href="https://www.linkedin.com/company/physilink/" className="dn-contact-cta-button">LinkedIn</a>
+                </div>
+                <br></br><br></br>
+                <h2 className="dn-contact-title">How to Use PhysiLink</h2>
+                <br></br>
+                <div className="video-wrapper-1">
+                    <iframe
+                    src="https://www.youtube.com/embed/t5c3KFWqmH4"
+                    title="How to Use PhysiLink"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    ></iframe>
                 </div>
             </div>
         </div>
